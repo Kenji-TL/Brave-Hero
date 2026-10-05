@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Prévia do site | Brave Hero Burguer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    @page { size: 1080px 1350px; margin: 0; }
+    :root {
+      --yellow: #F6C23B;
+      --red: #DB4E3C;
+      --ink: #1C1512;
+      --paper: #FFF8E9;
+      --green: #4FAF3B;
+      --stroke: 4px solid var(--ink);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Rubik", "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: #8A8578;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ---------- slide ---------- */
+    .slide {
+      position: relative;
+      width: 1080px;
+      height: 1350px;
+      margin: 0 auto 24px;
+      padding: 64px 60px 0;
+      overflow: hidden;
+      background-color: var(--paper);
+      break-after: page;
+    }
+    .slide:last-child { break-after: auto; }
+    @media print { body { background: none; } .slide { margin: 0; } }
+    .slide--yellow { background-color: var(--yellow); }
+    .slide--red { background-color: var(--red); color: #fff; }
+    .slide--ink { background-color: var(--ink); color: #fff; }
+    .halftone { background-image: radial-gradient(rgba(28, 21, 18, .13) 1.6px, transparent 1.9px); background-size: 16px 16px; }
+    .halftone-light { background-image: radial-gradient(rgba(255, 255, 255, .1) 1.6px, transparent 1.9px); background-size: 16px 16px; }
+
+    .topo { display: flex; align-items: center; justify-content: space-between; }
+    .marca { display: flex; align-items: center; gap: 12px; font-family: "Bangers", Impact, sans-serif; font-size: 28px; letter-spacing: .04em; }
+    .marca img { width: 52px; height: 52px; border-radius: 50%; border: 3px solid var(--ink); }
+    .eyebrow {
+      display: inline-block;
+      padding: 9px 20px;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      background: var(--ink);
+      border-radius: 999px;
+    }
+    .slide--red .eyebrow, .slide--ink .eyebrow { color: var(--ink); background: var(--yellow); }
+
+    .display { font-family: "Bangers", Impact, sans-serif; font-weight: 400; letter-spacing: .02em; line-height: .95; text-transform: uppercase; margin: 0; }
+    h2.display { margin: 26px 0 12px; font-size: 96px; }
+    h2 span { color: var(--red); }
+    .slide--red h2 span, .slide--ink h2 span { color: var(--yellow); }
+    .sub { margin: 0; font-size: 27px; font-weight: 500; line-height: 1.35; max-width: 900px; }
+
+    .rodape {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      bottom: 34px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 19px;
+      font-weight: 800;
+      opacity: .6;
+    }
+
+    /* ---------- moldura de computador ---------- */
+    .browser {
+      overflow: hidden;
+      background: #fff;
+      border: var(--stroke);
+      border-radius: 18px;
+      box-shadow: 9px 9px 0 var(--ink);
+    }
+    .browser__bar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      height: 48px;
+      padding: 0 18px;
+      background: #F1ECE0;
+      border-bottom: 3px solid var(--ink);
+    }
+    .dots { display: flex; gap: 8px; }
+    .dots i { width: 14px; height: 14px; border: 2px solid var(--ink); border-radius: 50%; }
+    .dots i:nth-child(1) { background: var(--red); }
+    .dots i:nth-child(2) { background: var(--yellow); }
+    .dots i:nth-child(3) { background: var(--green); }
+    .url {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      height: 30px;
+      padding: 0 16px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #4B4540;
+      background: #fff;
+      border: 2px solid rgba(28, 21, 18, .2);
+      border-radius: 999px;
+    }
+    .url svg { width: 13px; height: 13px; flex: none; }
+    .tela { aspect-ratio: 1.6; overflow: hidden; }
+    .tela img { display: block; width: 100%; }
+
+    .browser--sm { border-width: 3px; border-radius: 13px; box-shadow: 6px 6px 0 var(--ink); }
+    .browser--sm .browser__bar { height: 30px; gap: 9px; padding: 0 11px; border-bottom-width: 2px; }
+    .browser--sm .dots { gap: 5px; }
+    .browser--sm .dots i { width: 9px; height: 9px; border-width: 1.5px; }
+    .browser--sm .url { height: 18px; padding: 0 10px; font-size: 10px; border-width: 1.5px; }
+    .browser--sm .url svg { width: 8px; height: 8px; }
+
+    /* ---------- moldura de celular ---------- */
+    .phone {
+      position: relative;
+      padding: 12px;
+      background: var(--ink);
+      border-radius: 50px;
+      box-shadow: 10px 10px 0 rgba(28, 21, 18, .28);
+    }
+    .phone::before {
+      content: "";
+      position: absolute;
+      top: 21px;
+      left: 50%;
+      width: 30%;
+      height: 26px;
+      transform: translateX(-50%);
+      background: var(--ink);
+      border-radius: 20px;
+      z-index: 2;
+    }
+    .phone__tela { overflow: hidden; background: var(--yellow); border-radius: 39px; }
+    .phone__status {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 36px;
+      padding: 4px 30px 0 34px;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ink);
+      background: var(--yellow);
+    }
+    .phone__status svg { height: 12px; }
+    .phone img { display: block; width: 100%; }
+    .slide--ink .phone { box-shadow: 0 0 0 3px rgba(255, 255, 255, .18), 10px 10px 0 rgba(0, 0, 0, .5); }
+
+    /* ---------- 1. capa ---------- */
+    .capa h1 { margin-top: 40px; font-size: 128px; }
+    .capa h1 span {
+      display: block;
+      margin-top: 6px;
+      font-size: 150px;
+      color: var(--red);
+      -webkit-text-stroke: 3px var(--ink);
+      paint-order: stroke fill;
+      text-shadow: 6px 6px 0 var(--ink);
+    }
+    .capa .sub { margin-top: 18px; font-size: 30px; }
+    .capa__mock { position: absolute; left: 60px; right: 60px; top: 585px; height: 680px; }
+    .capa__pc { position: absolute; left: 0; top: 20px; width: 790px; transform: rotate(-2.5deg); }
+    .capa__cel { position: absolute; right: 12px; top: 80px; width: 272px; transform: rotate(4deg); }
+
+    /* ---------- 2. computador ---------- */
+    .pc-grande { margin-top: 30px; }
+    .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 30px; }
+    .legenda { margin: 12px 0 0; font-family: "Bangers", Impact, sans-serif; font-size: 30px; letter-spacing: .03em; text-align: center; }
+
+    /* ---------- 3 e 4. celular ---------- */
+    .duo { display: flex; justify-content: center; gap: 80px; margin-top: 40px; }
+    .duo figure { position: relative; width: 390px; margin: 0; }
+    .chip {
+      position: absolute;
+      left: 50%;
+      bottom: -22px;
+      transform: translateX(-50%);
+      padding: 8px 22px;
+      font-family: "Bangers", Impact, sans-serif;
+      font-size: 32px;
+      letter-spacing: .03em;
+      white-space: nowrap;
+      color: var(--ink);
+      background: #fff;
+      border: var(--stroke);
+      border-radius: 999px;
+      box-shadow: 5px 5px 0 var(--ink);
+      z-index: 3;
+    }
+
+    /* ---------- 5. seção por seção ---------- */
+    .quad { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 36px; margin-top: 44px; }
+
+    /* ---------- 6. resumo ---------- */
+    .resumo { display: grid; grid-template-columns: 1fr 370px; gap: 46px; align-items: center; margin-top: 40px; }
+    .lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+    .lista li { position: relative; padding-left: 50px; font-size: 27px; font-weight: 700; line-height: 1.25; }
+    .lista li::before {
+      content: "★";
+      position: absolute;
+      left: 0;
+      top: -1px;
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      font-size: 17px;
+      color: var(--ink);
+      background: #fff;
+      border: 3px solid var(--ink);
+      border-radius: 50%;
+    }
+    .fecho {
+      margin-top: 34px;
+      padding: 18px 22px;
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--ink);
+      border-radius: 16px;
+      box-shadow: 6px 6px 0 var(--red);
+    }
+    .fecho b { color: var(--yellow); }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 1. CAPA ===== -->
+  <section class="slide slide--yellow halftone capa">
+    <div class="topo">
+      <div class="marca"><img src="../site/assets/logo.jpg" alt=""> Brave Hero Burguer</div>
+      <span class="eyebrow">Prévia do site</span>
+    </div>
+    <h1 class="display">O site da<span>Brave Hero</span></h1>
+    <p class="sub">Veja como ele fica no computador e no celular.</p>
+
+    <div class="capa__mock">
+      <div class="browser capa__pc">
+        <div class="browser__bar"><span class="dots"><i></i><i></i><i></i></span><span class="url"><svg viewBox="0 0 12 14"><path d="M3 6V4a3 3 0 0 1 6 0v2h1v8H2V6zm1.5 0h3V4a1.5 1.5 0 0 0-3 0z" fill="#4B4540"/></svg>braveheroburguer.com.br</span></div>
+        <div class="tela"><img src="img/pc-topo.jpg" alt=""></div>
+      </div>
+      <div class="phone capa__cel">
+        <div class="phone__tela">
+          <div class="phone__status"><span>19:30</span><svg viewBox="0 0 44 12"><g fill="#1C1512"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="21" y="1" width="20" height="10" rx="3" fill="none" stroke="#1C1512" stroke-width="1.6"/><rect x="23" y="3" width="13" height="6" rx="1.5"/><rect x="42" y="4" width="2" height="4" rx="1"/></g></svg></div>
+          <img src="img/cel-topo.jpg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="rodape"><span>Prévia do site · Brave Hero Burguer</span><span>1/6</span></div>
+  </section>
+
+  <!-- ===== 2. NO COMPUTADOR ===== -->
+  <section class="slide halftone">
+    <div class="topo">
+      <span class="eyebrow">No computador</span>
+      <div class="marca"><img src="../site/assets/logo.jpg" alt=""> Brave Hero</div>
+    </div>
+    <h2 class="display">Assim fica no <span>computador</span></h2>
+    <p class="sub">Na primeira tela: pedido, reserva e o aviso de aberto agora.</p>
+
+    <div class="browser pc-grande">
+      <div class="browser__bar"><span class="dots"><i></i><i></i><i></i></span><span class="url"><svg viewBox="0 0 12 14"><path d="M3 6V4a3 3 0 0 1 6 0v2h1v8H2V6zm1.5 0h3V4a1.5 1.5 0 0 0-3 0z" fill="#4B4540"/></svg>braveheroburguer.com.br</span></div>
+      <div class="tela"><img src="img/pc-topo.jpg" alt=""></div>
+    </div>
+
+    <div class="trio">
+      <figure style="margin:0">
+        <div class="browser browser--sm">
+          <div class="browser__bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">braveheroburguer.com.br</span></div>
+          <div class="tela"><img src="img/pc-cardapio.jpg" alt=""></div>
+        </div>
+        <figcaption class="legenda">Cardápio</figcaption>
+      </figure>
+      <figure style="margin:0">
+        <div class="browser browser--sm">
+          <div class="browser__bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">braveheroburguer.com.br</span></div>
+          <div class="tela"><img src="img/pc-espaco.jpg" alt=""></div>
+        </div>
+        <figcaption class="legenda">Espaço kids</figcaption>
+      </figure>
+      <figure style="margin:0">
+        <div class="browser browser--sm">
+          <div class="browser__bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">braveheroburguer.com.br</span></div>
+          <div class="tela"><img src="img/pc-festas.jpg" alt=""></div>
+        </div>
+        <figcaption class="legenda">Festas</figcaption>
+      </figure>
+    </div>
+
+    <div class="rodape"><span>Prévia do site · Brave Hero Burguer</span><span>2/6</span></div>
+  </section>
+
+  <!-- ===== 3. NO CELULAR ===== -->
+  <section class="slide slide--red halftone">
+    <div class="topo">
+      <span class="eyebrow">No celular</span>
+      <div class="marca"><img src="../site/assets/logo.jpg" alt=""> Brave Hero</div>
+    </div>
+    <h2 class="display">Na palma da <span>mão</span></h2>
+    <p class="sub">O site se ajusta à tela do celular, com botões grandes e o WhatsApp sempre à mão.</p>
+
+    <div class="duo">
+      <figure>
+        <div class="phone"><div class="phone__tela">
+          <div class="phone__status"><span>19:30</span><svg viewBox="0 0 44 12"><g fill="#1C1512"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="21" y="1" width="20" height="10" rx="3" fill="none" stroke="#1C1512" stroke-width="1.6"/><rect x="23" y="3" width="13" height="6" rx="1.5"/><rect x="42" y="4" width="2" height="4" rx="1"/></g></svg></div>
+          <img src="img/cel-topo.jpg" alt="">
+        </div></div>
+        <span class="chip">Topo do site</span>
+      </figure>
+      <figure>
+        <div class="phone"><div class="phone__tela">
+          <div class="phone__status"><span>19:30</span><svg viewBox="0 0 44 12"><g fill="#1C1512"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="21" y="1" width="20" height="10" rx="3" fill="none" stroke="#1C1512" stroke-width="1.6"/><rect x="23" y="3" width="13" height="6" rx="1.5"/><rect x="42" y="4" width="2" height="4" rx="1"/></g></svg></div>
+          <img src="img/cel-cardapio.jpg" alt="">
+        </div></div>
+        <span class="chip">Cardápio</span>
+      </figure>
+    </div>
+
+    <div class="rodape"><span>Prévia do site · Brave Hero Burguer</span><span>3/6</span></div>
+  </section>
+
+  <!-- ===== 4. NO CELULAR (festas e avaliações) ===== -->
+  <section class="slide slide--ink halftone-light">
+    <div class="topo">
+      <span class="eyebrow">No celular</span>
+      <div class="marca"><img src="../site/assets/logo.jpg" alt=""> Brave Hero</div>
+    </div>
+    <h2 class="display">Festas e <span>avaliações</span></h2>
+    <p class="sub">Reserva de aniversário pelo WhatsApp e a nota 4,9 do Google em destaque.</p>
+
+    <div class="duo">
+      <figure>
+        <div class="phone"><div class="phone__tela">
+          <div class="phone__status"><span>19:30</span><svg viewBox="0 0 44 12"><g fill="#1C1512"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="21" y="1" width="20" height="10" rx="3" fill="none" stroke="#1C1512" stroke-width="1.6"/><rect x="23" y="3" width="13" height="6" rx="1.5"/><rect x="42" y="4" width="2" height="4" rx="1"/></g></svg></div>
+          <img src="img/cel-festas.jpg" alt="">
+        </div></div>
+        <span class="chip">Festas</span>
+      </figure>
+      <figure>
+        <div class="phone"><div class="phone__tela">
+          <div class="phone__status"><span>19:30</span><svg viewBox="0 0 44 12"><g fill="#1C1512"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="21" y="1" width="20" height="10" rx="3" fill="none" stroke="#1C1512" stroke-width="1.6"/><rect x="23" y="3" width="13" height="6" rx="1.5"/><rect x="42" y="4" width="2" height="4" rx="1"/></g></svg></div>
+          <img src="img/cel-avaliacoes.jpg" alt="">
+        </div></div>
+        <span class="chip">Avaliações</span>
+      </figure>
+    </div>
+
+    <div class="rodape"><span>Prévia do site · Brave Hero Burguer</span><span>4/6</span></div>
+  </section>
+
+  <!-- ===== 5. SEÇÃO POR SEÇÃO ===== -->
+  <section class="slide halftone">
+    <div class="topo">
+      <span class="eyebrow">No computador</span>
+      <div class="marca"><img src="../site/assets/logo.jpg" alt=""> Brave Hero</div>
+    </div>
+    <h2 class="display">Seção por <span>seção</span></h2>
+    <p class="sub">Quem entra no site encontra tudo sem precisar perguntar no WhatsApp.</p>
+
+    <div class="quad">
+      <figure style="margin:0">
+        <div class="browser browser--sm">
+          <div class="browser__bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">braveheroburguer.com.br</span></div>
+          <div class="tela"><img src="img/pc-qg.jpg" alt=""></div>
+        </div>
+        <figcaption class="legenda">Por dentro do QG</figcaption>
+      </figure>
+      <figure style="margin:0">
+        <div class="browser browser--sm">
+          <div class="browser__bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">braveheroburguer.com.br</span></div>
+          <div class="tela"><img src="img/pc-avaliacoes.jpg" alt=""></div>
+        </div>
+        <figcaption class="legenda">Avaliações do Google</figcaption>
+      </figure>
+      <figure style="margin:0">
+        <div class="browser browser--sm">
+          <div class="browser__bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">braveheroburguer.com.br</span></div>
+          <div class="tela"><img src="img/pc-delivery.jpg" alt=""></div>
+        </div>
+        <figcaption class="legenda">Delivery</figcaption>
+      </figure>
+      <figure style="margin:0">
+        <div class="browser browser--sm">
+          <div class="browser__bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">braveheroburguer.com.br</span></div>
+          <div class="tela"><img src="img/pc-visite.jpg" alt=""></div>
+        </div>
+        <figcaption class="legenda">Como chegar</figcaption>
+      </figure>
+    </div>
+
+    <div class="rodape"><span>Prévia do site · Brave Hero Burguer</span><span>5/6</span></div>
+  </section>
+
+  <!-- ===== 6. RESUMO ===== -->
+  <section class="slide slide--yellow halftone">
+    <div class="topo">
+      <span class="eyebrow">Resumindo</span>
+      <div class="marca"><img src="../site/assets/logo.jpg" alt=""> Brave Hero</div>
+    </div>
+
+    <h2 class="display">Tudo num <span>link só</span></h2>
+    <p class="sub">O que o cliente encontra no site, no celular ou no computador.</p>
+
+    <div class="resumo">
+      <div>
+        <ul class="lista">
+          <li>Cardápio com fotos e botão de pedido</li>
+          <li>Pedido direto com o cupom BRAVE10</li>
+          <li>iFood, 99Food e WhatsApp num toque</li>
+          <li>Espaço kids e festas com reserva pelo WhatsApp</li>
+          <li>Fotos do QG que ampliam com um toque</li>
+          <li>Avaliações reais do Google</li>
+          <li>Aviso de aberto agora, mapa e rota até a casa</li>
+        </ul>
+        <p class="fecho">Um endereço pra colocar na <b>bio do Instagram</b> e no <b>perfil do Google</b>.</p>
+      </div>
+      <div class="phone">
+        <div class="phone__tela">
+          <div class="phone__status"><span>19:30</span><svg viewBox="0 0 44 12"><g fill="#1C1512"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="21" y="1" width="20" height="10" rx="3" fill="none" stroke="#1C1512" stroke-width="1.6"/><rect x="23" y="3" width="13" height="6" rx="1.5"/><rect x="42" y="4" width="2" height="4" rx="1"/></g></svg></div>
+          <img src="img/cel-delivery.jpg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="rodape"><span>Prévia do site · Brave Hero Burguer</span><span>6/6</span></div>
+  </section>
+
+</body>
+</html>

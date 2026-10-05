@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Proposta — Site | Brave Hero Burguer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 0; }
+    :root {
+      --yellow: #F6C23B;
+      --yellow-soft: #FFE9A8;
+      --red: #DB4E3C;
+      --ink: #1C1512;
+      --paper: #FFF8E9;
+      --white: #FFFFFF;
+      --green: #4FAF3B;
+      --teal: #2E9E97;
+      --stroke: 2.5px solid var(--ink);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Rubik", "Segoe UI", Arial, sans-serif;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: var(--ink);
+      background: #D8D2C4;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      padding: 16mm 16mm 14mm;
+      overflow: hidden;
+      background: var(--paper);
+      break-after: page;
+      page-break-after: always;
+    }
+    .page:last-child { break-after: auto; page-break-after: auto; }
+    @media screen { .page { margin: 0 auto 10mm; box-shadow: 0 6px 24px rgba(0,0,0,.2); } }
+
+    .halftone {
+      background-image: radial-gradient(rgba(28, 21, 18, .14) 1.1px, transparent 1.3px);
+      background-size: 11px 11px;
+    }
+    .display {
+      font-family: "Bangers", Impact, sans-serif;
+      font-weight: 400;
+      letter-spacing: .02em;
+      line-height: .95;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 8px;
+      padding: 4px 11px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      background: var(--ink);
+      border-radius: 999px;
+    }
+    .eyebrow--red { color: var(--white); background: var(--red); }
+    h2.display { font-size: 38px; margin-bottom: 10px; }
+    h2 .red { color: var(--red); }
+    .lead { font-size: 13.5px; margin: 0 0 18px; max-width: 150mm; }
+    .panel {
+      background: var(--white);
+      border: var(--stroke);
+      border-radius: 12px;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+    .rodape {
+      position: absolute;
+      left: 16mm;
+      right: 16mm;
+      bottom: 9mm;
+      display: flex;
+      justify-content: space-between;
+      font-size: 9.5px;
+      font-weight: 700;
+      opacity: .6;
+    }
+
+    /* ---------- capa ---------- */
+    .capa { background-color: var(--yellow); }
+    .capa__topo { display: flex; align-items: center; justify-content: space-between; }
+    .capa__marca { display: flex; align-items: center; gap: 10px; font-family: "Bangers", Impact, sans-serif; font-size: 22px; letter-spacing: .04em; }
+    .capa__marca img { width: 44px; height: 44px; border-radius: 50%; border: var(--stroke); }
+    .capa h1 { font-size: 76px; margin-top: 16mm; }
+    .capa h1 span {
+      display: block;
+      font-size: 46px;
+      color: var(--red);
+      -webkit-text-stroke: 1.6px var(--ink);
+      paint-order: stroke fill;
+      text-shadow: 3px 3px 0 var(--ink);
+      margin-top: 6px;
+    }
+    .capa__lead { font-size: 15px; font-weight: 500; max-width: 140mm; margin: 14px 0 0; }
+    .capa__mock { position: relative; margin-top: 12mm; height: 112mm; }
+    .capa__desktop {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 150mm;
+      overflow: hidden;
+      transform: rotate(-2deg);
+    }
+    .capa__desktop img { display: block; width: 100%; }
+    .capa__celular {
+      position: absolute;
+      right: 2mm;
+      top: 14mm;
+      width: 44mm;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 3px solid var(--ink);
+      box-shadow: 5px 5px 0 var(--ink);
+      transform: rotate(4deg);
+      background: var(--ink);
+    }
+    .capa__celular img { display: block; width: 100%; }
+    .capa__autor {
+      position: absolute;
+      left: 16mm;
+      right: 16mm;
+      bottom: 14mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-top: 10px;
+      border-top: var(--stroke);
+    }
+    .capa__autor strong { display: block; font-size: 15px; }
+    .capa__autor small { font-size: 11px; font-weight: 500; }
+    .capa__autor .zap { text-align: right; font-weight: 800; font-size: 13px; }
+
+    /* ---------- cards de vantagens ---------- */
+    .grade { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; }
+    .vantagem { padding: 13px 14px 12px; }
+    .vantagem__topo { display: flex; align-items: center; gap: 9px; margin-bottom: 6px; }
+    .num {
+      display: grid;
+      place-items: center;
+      flex: none;
+      width: 28px;
+      height: 28px;
+      font-family: "Bangers", Impact, sans-serif;
+      font-size: 17px;
+      color: var(--white);
+      background: var(--red);
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+    }
+    .num--green { background: var(--green); }
+    .num--teal { background: var(--teal); }
+    .num--yellow { background: var(--yellow); color: var(--ink); }
+    .vantagem h3 { font-family: "Bangers", Impact, sans-serif; font-weight: 400; font-size: 20px; letter-spacing: .03em; margin: 0; line-height: 1; }
+    .vantagem p { margin: 0; font-size: 12px; }
+
+    .destaque {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 12px;
+    }
+    .destaque strong { color: var(--yellow); }
+    .destaque .big { font-family: "Bangers", Impact, sans-serif; font-size: 40px; color: var(--yellow); line-height: 1; }
+
+    /* ---------- sem site ---------- */
+    .google {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .google__nome { font-size: 17px; font-weight: 700; }
+    .google__nota { font-size: 12.5px; }
+    .google__nota b { color: #E09A00; letter-spacing: 1px; }
+    .google__acoes { display: flex; gap: 8px; margin-top: 8px; }
+    .google__acoes span {
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      border: 1.5px solid #9BA3AF;
+      border-radius: 999px;
+      color: #374151;
+    }
+    .google__acoes .falta { border: 2px dashed var(--red); color: var(--red); }
+    .google__seta {
+      max-width: 44mm;
+      padding: 9px 11px;
+      font-weight: 800;
+      font-size: 12px;
+      color: var(--white);
+      background: var(--red);
+      border: var(--stroke);
+      border-radius: 10px;
+      transform: rotate(2deg);
+    }
+    .perdas { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+    .perdas li {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 10px 13px;
+      background: var(--white);
+      border: var(--stroke);
+      border-radius: 10px;
+    }
+    .perdas li::before {
+      content: "✕";
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--white);
+      background: var(--red);
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+    }
+    .perdas b { display: block; font-size: 13px; }
+    .perdas span { font-size: 12px; }
+
+    /* ---------- site pronto ---------- */
+    .vitrine { display: grid; grid-template-columns: 1fr 34mm; gap: 10px; align-items: end; margin-bottom: 10px; }
+    .vitrine__desk { overflow: hidden; }
+    .vitrine__desk img, .vitrine__cel img { display: block; width: 100%; }
+    .vitrine__cel { overflow: hidden; border-radius: 14px; border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+    .secoes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+    .secoes figure { margin: 0; }
+    .secoes .thumb { height: 22mm; overflow: hidden; border: 2px solid var(--ink); border-radius: 8px; }
+    .secoes img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .secoes figcaption { font-size: 10.5px; font-weight: 800; margin-top: 3px; }
+    .checklist { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; }
+    .checklist li { position: relative; padding-left: 22px; font-size: 12px; }
+    .checklist li::before {
+      content: "★";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      display: grid;
+      place-items: center;
+      width: 16px;
+      height: 16px;
+      font-size: 9px;
+      background: var(--yellow);
+      border: 1.5px solid var(--ink);
+      border-radius: 50%;
+    }
+    .obs { margin: 10px 0 0; font-size: 10.5px; opacity: .75; }
+
+    /* ---------- hospedagem ---------- */
+    .subtitulo { font-family: "Bangers", Impact, sans-serif; font-weight: 400; font-size: 21px; letter-spacing: .03em; margin: 0 0 6px; }
+    .verba {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .verba > div { padding: 12px 14px; }
+    .verba .valor { font-family: "Bangers", Impact, sans-serif; font-size: 30px; line-height: 1; color: var(--red); }
+    .verba p { margin: 4px 0 0; font-size: 11.5px; }
+
+    /* ---------- investimento ---------- */
+    .precos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+    .preco { padding: 16px 16px 14px; }
+    .preco__tag {
+      display: inline-block;
+      padding: 3px 10px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: var(--yellow);
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+    }
+    .preco h3 { font-family: "Bangers", Impact, sans-serif; font-weight: 400; font-size: 26px; letter-spacing: .03em; margin: 8px 0 6px; line-height: 1; }
+    .preco__valor { font-family: "Bangers", Impact, sans-serif; font-size: 50px; line-height: 1; color: var(--red); -webkit-text-stroke: 1px var(--ink); paint-order: stroke fill; }
+    .preco__cond { font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+    .preco__ou { display: flex; align-items: center; gap: 8px; margin: 10px 0; font-size: 11px; font-weight: 800; opacity: .6; }
+    .preco__ou::before, .preco__ou::after { content: ""; flex: 1; height: 2px; background: var(--ink); opacity: .3; }
+    .preco__alt { font-size: 14px; font-weight: 700; }
+    .preco__alt b { font-size: 20px; color: var(--red); }
+    .preco__linha { display: flex; justify-content: space-between; gap: 8px; padding: 7px 0; border-bottom: 1.5px dashed rgba(28,21,18,.3); font-size: 12.5px; }
+    .preco__linha b { white-space: nowrap; }
+    .preco small { display: block; margin-top: 8px; font-size: 10.5px; opacity: .75; }
+    .preco ul { margin: 10px 0 0; padding-left: 16px; font-size: 12px; }
+    .preco li { margin-bottom: 3px; }
+    .condicoes { margin-top: 12px; padding: 14px 16px 14px; }
+    .condicoes .subtitulo { margin-bottom: 8px; }
+    .condicoes .checklist li { font-size: 11.5px; }
+
+    .contato {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 14px;
+      margin-top: 16px;
+      padding: 18px 20px;
+      color: var(--white);
+      background: var(--ink);
+      border-radius: 14px;
+      box-shadow: 5px 5px 0 var(--red);
+    }
+    .contato .display { font-size: 30px; color: var(--yellow); }
+    .contato p { margin: 6px 0 0; font-size: 13px; }
+    .contato__zap {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 16px;
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--white);
+      text-decoration: none;
+      background: #25D366;
+      border: 2.5px solid var(--white);
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .heroi-final { position: absolute; right: 16mm; bottom: 14mm; width: 34mm; }
+    .placa {
+      display: inline-block;
+      padding: 4px 12px 10px;
+      font-family: "Bangers", Impact, sans-serif;
+      font-size: 22px;
+      letter-spacing: .04em;
+      background: var(--white);
+      border: var(--stroke);
+      border-radius: 8px;
+      transform: rotate(-4deg);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- mascote (mesmo desenho do site) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="corpo" stroke="#1C1512" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M42 144 H158 V160 C158 172 148 180 136 180 H64 C52 180 42 172 42 160 Z" style="fill:var(--bun)" stroke-width="5"/>
+        <path d="M103 150 L93 163 H100 L96 174 L108 160 H101 Z" fill="#F6C23B" stroke-width="2.5"/>
+        <rect x="36" y="122" width="128" height="24" rx="12" fill="#6B3A22" stroke-width="5"/>
+        <path d="M34 116 H166 V124 H152 L146 138 L140 124 H112 L106 142 L100 124 H74 L68 134 L62 124 H34 Z" fill="#F6C23B" stroke-width="4"/>
+        <path d="M38 118 C38 62 64 38 100 38 C136 38 162 62 162 118 Z" style="fill:var(--bun)" stroke-width="5"/>
+        <path d="M40 78 C70 67 130 67 160 78 L160 98 C130 90 70 90 40 98 Z" fill="#1C1512" stroke="none"/>
+        <ellipse cx="78" cy="84" rx="12" ry="8" fill="#FFFFFF" stroke="none"/>
+        <ellipse cx="122" cy="84" rx="12" ry="8" fill="#FFFFFF" stroke="none"/>
+        <circle cx="81" cy="85" r="4" fill="#1C1512" stroke="none"/>
+        <circle cx="125" cy="85" r="4" fill="#1C1512" stroke="none"/>
+        <path d="M86 104 Q100 115 114 104" fill="none" stroke-width="5"/>
+      </g>
+    </defs>
+    <symbol id="heroi-bracos" viewBox="0 0 200 250">
+      <path d="M54 118 C44 168 34 204 26 238 L64 224 L100 240 L136 224 L174 238 C166 204 156 168 146 118 Z" style="fill:var(--cape)" stroke="#1C1512" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M80 176 L74 222 M120 176 L126 222" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <ellipse cx="70" cy="226" rx="15" ry="9" style="fill:var(--cape)" stroke="#1C1512" stroke-width="4"/>
+      <ellipse cx="130" cy="226" rx="15" ry="9" style="fill:var(--cape)" stroke="#1C1512" stroke-width="4"/>
+      <use href="#corpo"/>
+      <path d="M42 124 C20 104 22 54 46 16 M158 124 C180 104 178 54 154 16" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <circle cx="46" cy="14" r="11" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+      <circle cx="154" cy="14" r="11" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+    </symbol>
+  </svg>
+
+  <!-- ===== 1. CAPA ===== -->
+  <section class="page capa halftone">
+    <div class="capa__topo">
+      <div class="capa__marca"><img src="../site/assets/logo.jpg" alt=""> Brave Hero Burguer</div>
+      <span class="eyebrow">Proposta comercial</span>
+    </div>
+
+    <h1 class="display">Site profissional<span>pra Brave Hero Burguer</span></h1>
+    <p class="capa__lead">Como transformar quem pesquisa “hamburgueria na Ilha” em cliente na mesa, no delivery e nas festas de aniversário.</p>
+
+    <div class="capa__mock">
+      <div class="capa__desktop panel"><img src="img/site-topo.jpg" alt="Site da Brave Hero no computador"></div>
+      <div class="capa__celular"><img src="img/site-celular.jpg" alt="Site da Brave Hero no celular"></div>
+    </div>
+
+    <div class="capa__autor">
+      <div>
+        <strong>Gustavo Kenji Norimatsu</strong>
+        <small>Criação de sites · Setembro de 2026</small>
+      </div>
+      <div class="zap">WhatsApp<br>(81) 99599-6640</div>
+    </div>
+  </section>
+
+  <!-- ===== 2. VANTAGENS ===== -->
+  <section class="page">
+    <span class="eyebrow">Por que ter um site</span>
+    <h2 class="display">Um site bom trabalha <span class="red">24 horas</span> pela Brave Hero</h2>
+    <p class="lead">A Brave Hero já tem o que muita hamburgueria queria: nota 4,9 no Google, espaço kids de verdade e festas cheias. O site junta tudo isso num lugar só e trabalha dia e noite pra trazer cliente novo.</p>
+
+    <div class="grade">
+      <article class="vantagem panel">
+        <div class="vantagem__topo"><span class="num">1</span><h3>Aparecer no Google</h3></div>
+        <p>Quem pesquisa “hamburgueria na Ilha do Governador” encontra um site completo, e o perfil da Brave Hero no Google deixa de mostrar “Adicionar website”.</p>
+      </article>
+      <article class="vantagem panel">
+        <div class="vantagem__topo"><span class="num num--green">2</span><h3>Pedido direto, sem comissão</h3></div>
+        <p>Os botões levam pro cardápio próprio, com o cupom BRAVE10. Pedido feito ali não paga comissão de aplicativo, e o cliente passa a ser da Brave Hero.</p>
+      </article>
+      <article class="vantagem panel">
+        <div class="vantagem__topo"><span class="num num--teal">3</span><h3>Mais festas e reservas</h3></div>
+        <p>Espaço kids, fotos de aniversário e botão de reserva no WhatsApp: os pais escolhem onde vai ser a festa antes de sair de casa.</p>
+      </article>
+      <article class="vantagem panel">
+        <div class="vantagem__topo"><span class="num num--yellow">4</span><h3>Confiança de quem não conhece</h3></div>
+        <p>Avaliações reais do Google, fotos do salão e endereço com mapa mostram na hora que o lugar existe, é bom e fica perto.</p>
+      </article>
+      <article class="vantagem panel">
+        <div class="vantagem__topo"><span class="num">5</span><h3>Tudo num link só</h3></div>
+        <p>Cardápio, iFood, 99Food, WhatsApp, horário, rota e avaliações no mesmo endereço. Perfeito pra bio do Instagram e pro perfil do Google.</p>
+      </article>
+      <article class="vantagem panel">
+        <div class="vantagem__topo"><span class="num num--green">6</span><h3>Sempre atualizado</h3></div>
+        <p>Item novo no cardápio, promoção ou horário especial: com a manutenção mensal, é só mandar no WhatsApp que o site muda.</p>
+      </article>
+    </div>
+
+    <div class="destaque">
+      <span class="big">4,9 ★</span>
+      <div>Hoje a Brave Hero tem <strong>nota 4,9 com 169 avaliações no Google</strong>. O site coloca essa reputação na frente de quem ainda não conhece a casa.</div>
+    </div>
+
+    <div class="rodape"><span>Proposta · Brave Hero Burguer</span><span>Gustavo Kenji Norimatsu · (81) 99599-6640</span></div>
+  </section>
+
+  <!-- ===== 3. SEM SITE ===== -->
+  <section class="page">
+    <span class="eyebrow eyebrow--red">O que se perde hoje</span>
+    <h2 class="display">Sem site, a Brave Hero deixa <span class="red">dinheiro na mesa</span></h2>
+    <p class="lead">A reputação já existe. O que falta é um lugar próprio pra transformar essa reputação em pedido, reserva e cliente fiel.</p>
+
+    <div class="google panel">
+      <div>
+        <div class="google__nome">Brave Hero Hamburgueria</div>
+        <div class="google__nota"><b>★★★★★</b> 4,9 (169) · Hamburgueria · Cocotá</div>
+        <div class="google__acoes"><span>Rotas</span><span>Ligar</span><span class="falta">Adicionar website</span></div>
+      </div>
+      <div class="google__seta">Assim o perfil aparece hoje no Google: sem site.</div>
+    </div>
+
+    <ul class="perdas">
+      <li><div><b>Menos destaque no Google</b><span>Quem compara hamburguerias vê um perfil sem site e com menos informação. Muitas vezes escolhe a concorrente que parece mais completa.</span></div></li>
+      <li><div><b>Dependência dos aplicativos</b><span>Sem um canal próprio, os pedidos ficam com o iFood e a 99: comissão em cada pedido, e o aplicativo mostra outras hamburguerias do lado.</span></div></li>
+      <li><div><b>Informação espalhada</b><span>Cardápio, horário, festas e endereço ficam divididos entre posts, destaques e Linktree. O cliente cansa de procurar e desiste.</span></div></li>
+      <li><div><b>WhatsApp cheio de pergunta repetida</b><span>“Que horas abre?”, “Onde fica?”, “Como funciona a festa?”. Tempo que a equipe poderia usar atendendo quem já quer comprar.</span></div></li>
+      <li><div><b>Festas sem vitrine</b><span>As festas de aniversário reúnem grupos de 10 a 60 pessoas, mas não têm uma página que mostre o espaço e facilite a reserva.</span></div></li>
+      <li><div><b>Invisível pra quem não segue no Instagram</b><span>Quem ainda não conhece a Brave Hero e pesquisa no Google não encontra uma página que apresente a casa.</span></div></li>
+    </ul>
+
+    <div class="rodape"><span>Proposta · Brave Hero Burguer</span><span>Gustavo Kenji Norimatsu · (81) 99599-6640</span></div>
+  </section>
+
+  <!-- ===== 4. SITE PRONTO ===== -->
+  <section class="page">
+    <span class="eyebrow">Já está pronto</span>
+    <h2 class="display">O site da <span class="red">Brave Hero</span></h2>
+    <p class="lead">Feito sob medida, no tema de heróis, com as fotos, o cardápio e as avaliações reais da casa. Funciona no computador e no celular.</p>
+
+    <div class="vitrine">
+      <div class="vitrine__desk panel"><img src="img/site-topo.jpg" alt="Topo do site no computador"></div>
+      <div class="vitrine__cel"><img src="img/site-celular.jpg" alt="Site no celular"></div>
+    </div>
+
+    <div class="secoes">
+      <figure><div class="thumb"><img src="img/secao-cardapio.jpg" alt=""></div><figcaption>Cardápio com fotos</figcaption></figure>
+      <figure><div class="thumb"><img src="img/secao-kids.jpg" alt=""></div><figcaption>Espaço kids</figcaption></figure>
+      <figure><div class="thumb"><img src="img/secao-festa.jpg" alt=""></div><figcaption>Festas de aniversário</figcaption></figure>
+      <figure><div class="thumb"><img src="img/secao-qg.jpg" alt=""></div><figcaption>Por dentro do QG</figcaption></figure>
+    </div>
+
+    <h3 class="subtitulo">O que está incluso</h3>
+    <ul class="checklist">
+      <li>Design exclusivo no tema de heróis, com mascotes próprios da Brave Hero</li>
+      <li>Cardápio com fotos e botões que levam direto pro pedido</li>
+      <li>Seções de espaço kids, festas e galeria do QG com fotos que ampliam</li>
+      <li>Avaliações reais do Google e botão pra deixar avaliação</li>
+      <li>Delivery: cardápio próprio com cupom, iFood, 99Food e WhatsApp</li>
+      <li>Aviso automático de “aberto agora”, mapa e rota até a casa</li>
+      <li>Versão pro celular, leve e rápida</li>
+      <li>Site publicado no ar, no endereço com a marca da Brave Hero</li>
+    </ul>
+    <p class="obs">A hospedagem e o domínio ficam no plano Premium da Hostinger, contratado pela Brave Hero. Explico o porquê na página 5.</p>
+
+    <div class="rodape"><span>Proposta · Brave Hero Burguer</span><span>Gustavo Kenji Norimatsu · (81) 99599-6640</span></div>
+  </section>
+
+  <!-- ===== 5. HOSPEDAGEM E DOMÍNIO ===== -->
+  <section class="page">
+    <span class="eyebrow">Hospedagem e domínio</span>
+    <h2 class="display">Um endereço com a <span class="red">marca da Brave Hero</span></h2>
+    <p class="lead">Pra colocar o site no ar, eu recomendo o <b>plano Premium da Hostinger</b>. Ele junta num lugar só a hospedagem (onde o site fica guardado), o domínio (o endereço, como braveheroburguer.com.br) e o e-mail com a marca.</p>
+
+    <div class="grade">
+      <article class="vantagem panel">
+        <div class="vantagem__topo"><span class="num">1</span><h3>Domínio grátis no primeiro ano</h3></div>
+        <p>O endereço com a marca vem junto com o plano. É fácil de lembrar e de divulgar no cardápio, na embalagem e na bio do Instagram.</p>
+      </article>
+      <article class="vantagem panel">
+        <div class="vantagem__topo"><span class="num num--green">2</span><h3>Tudo no nome da Brave Hero</h3></div>
+        <p>A conta, o site e o domínio ficam no CNPJ ou CPF de vocês. O site é da Brave Hero de verdade e não depende de ninguém pra continuar no ar.</p>
+      </article>
+      <article class="vantagem panel">
+        <div class="vantagem__topo"><span class="num num--teal">3</span><h3>E-mail com a marca</h3></div>
+        <p>Contas como contato@braveheroburguer.com.br, grátis no 1º ano. Passam mais confiança pros pais que querem fechar festa e pros fornecedores.</p>
+      </article>
+      <article class="vantagem panel">
+        <div class="vantagem__topo"><span class="num num--yellow">4</span><h3>Site seguro</h3></div>
+        <p>Cadeado de segurança (SSL) grátis: o navegador não mostra aviso de “site não seguro”, e o Google dá preferência a sites protegidos.</p>
+      </article>
+      <article class="vantagem panel">
+        <div class="vantagem__topo"><span class="num">5</span><h3>Rápido e com backup</h3></div>
+        <p>O site abre rápido no celular, e a Hostinger faz uma cópia de segurança toda semana. Se algo der errado, dá pra voltar.</p>
+      </article>
+      <article class="vantagem panel">
+        <div class="vantagem__topo"><span class="num num--green">6</span><h3>Eu configuro tudo</h3></div>
+        <p>Vocês só contratam o plano, e eu mando o link e acompanho o passo a passo. Depois eu publico o site e ligo o domínio.</p>
+      </article>
+    </div>
+
+    <div class="destaque">
+      <span class="big">?</span>
+      <div><strong>Por que não usar um endereço grátis?</strong> Sites grátis ficam com endereços como brave-hero.netlify.app, difíceis de lembrar e com cara de provisório. Com o domínio próprio, a Brave Hero aparece no Google e no Instagram como a empresa estabelecida que ela já é.</div>
+    </div>
+
+    <div class="verba">
+      <div class="panel"><div class="valor">R$ 10,99/mês</div><p><b>Plano Premium de 48 meses</b> (R$ 527,52 no total). Contratado e pago pela Brave Hero, direto à Hostinger.</p></div>
+      <div class="panel"><div class="valor">R$ 0</div><p><b>Domínio no 1º ano.</b> Vem de brinde com o plano. Do 2º ano em diante, a renovação do domínio também é paga à Hostinger.</p></div>
+    </div>
+    <p class="obs">Esse valor não está incluso no preço do site: é pago pela Brave Hero diretamente à Hostinger. Preços da Hostinger em setembro de 2026, que podem mudar conforme as promoções. Depois dos 48 meses, o plano renova por R$ 38,99/mês.</p>
+
+    <div class="rodape"><span>Proposta · Brave Hero Burguer</span><span>Gustavo Kenji Norimatsu · (81) 99599-6640</span></div>
+  </section>
+
+  <!-- ===== 6. INVESTIMENTO ===== -->
+  <section class="page halftone" style="background-color: var(--yellow-soft);">
+    <span class="eyebrow eyebrow--red">Investimento</span>
+    <h2 class="display">Bora colocar a Brave Hero <span class="red">no ar?</span></h2>
+    <p class="lead">O site é a casa da Brave Hero na internet, a Hostinger mantém essa casa no ar com o endereço da marca, e a manutenção deixa tudo sempre atualizado.</p>
+
+    <div class="precos">
+      <div class="preco panel">
+        <span class="preco__tag">Site</span>
+        <h3>Site completo</h3>
+        <div class="preco__valor">R$ 1.500</div>
+        <div class="preco__cond">à vista</div>
+        <div class="preco__ou">ou</div>
+        <div class="preco__alt"><b>R$ 2.000</b> no cartão de crédito</div>
+        <small>Tudo o que está na página 4: site pronto, publicado e funcionando no computador e no celular, com 2 rodadas de ajustes grátis.</small>
+      </div>
+      <div class="preco panel">
+        <span class="preco__tag">Todo mês</span>
+        <h3>Manutenção mensal</h3>
+        <div class="preco__valor">R$ 150</div>
+        <div class="preco__cond">por mês</div>
+        <ul>
+          <li>Atualizar cardápio, fotos, promoções e avaliações</li>
+          <li>Site sempre no ar, com correções quando precisar</li>
+          <li>Pedidos de mudança direto pelo WhatsApp</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="condicoes panel">
+      <h3 class="subtitulo">O que fica combinado</h3>
+      <ul class="checklist">
+        <li><b>2 rodadas de ajustes grátis.</b> Com o site pronto, vocês pedem as mudanças que quiserem (textos, fotos, cores, ordem das seções) em até duas rodadas, sem custo.</li>
+        <li><b>Depois da entrega,</b> as atualizações de cardápio, fotos e promoções entram na manutenção mensal. Funcionalidade nova fica fora dela e é orçada à parte.</li>
+        <li><b>Hospedagem e domínio por conta da Brave Hero.</b> O plano Premium da Hostinger é contratado e pago por vocês, direto à Hostinger (página 5).</li>
+        <li><b>O site é de vocês.</b> A conta da Hostinger, o domínio e os e-mails ficam registrados no nome da Brave Hero.</li>
+      </ul>
+    </div>
+
+    <div class="contato">
+      <div>
+        <div class="display">Gustavo Kenji Norimatsu</div>
+        <p>Criação de sites · Chama no WhatsApp pra fechar ou tirar dúvidas.</p>
+      </div>
+      <a class="contato__zap" href="https://wa.me/5581995996640?text=Ol%C3%A1%2C%20Gustavo!%20Vi%20a%20proposta%20do%20site%20da%20Brave%20Hero.">WhatsApp (81) 99599-6640</a>
+    </div>
+
+    <div class="heroi-final" aria-hidden="true">
+      <div style="text-align:center"><span class="placa">Bora?</span></div>
+      <svg viewBox="0 0 200 250" style="display:block; width:100%; margin-top:-14px; --bun:#E5503D; --cape:#F6C23B"><use href="#heroi-bracos" width="200" height="250"/></svg>
+    </div>
+
+    <div class="rodape" style="right: 60mm;"><span>Proposta preparada em setembro de 2026</span></div>
+  </section>
+
+</body>
+</html>

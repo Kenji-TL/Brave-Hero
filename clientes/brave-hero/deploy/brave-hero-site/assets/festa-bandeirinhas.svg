@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 130" width="400" height="130">
+  <!-- bandeirinhas de festa (se repetem na horizontal no topo da seção) -->
+  <path d="M0 18 Q200 70 400 18" fill="none" stroke="#FFF4DC" stroke-width="3"/>
+  <g stroke="#1C1512" stroke-width="3" stroke-linejoin="round">
+    <path d="M14 27 L66 27 L40 75 Z" fill="#DB4E3C"/>
+    <path d="M94 40 L146 40 L120 88 Z" fill="#F6C23B"/>
+    <path d="M174 44 L226 44 L200 92 Z" fill="#2E9E97"/>
+    <path d="M254 40 L306 40 L280 88 Z" fill="#4FAF3B"/>
+    <path d="M334 27 L386 27 L360 75 Z" fill="#F7A8C0"/>
+  </g>
+</svg>

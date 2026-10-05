@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 900" width="1600" height="900">
+  <!-- QG dos heróis à noite — ilustração original da Brave Hero (fundo da seção "Espaço kids") -->
+  <defs>
+    <style>
+      .ink { stroke: #1C1512; stroke-linejoin: round; stroke-linecap: round; }
+      .t { font-family: Impact, "Arial Black", "Helvetica Neue", Arial, sans-serif; font-weight: 900; }
+    </style>
+    <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#10163A"/>
+      <stop offset=".6" stop-color="#2B2A6C"/>
+      <stop offset="1" stop-color="#4A3A8C"/>
+    </linearGradient>
+    <linearGradient id="aurora1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2E9E97" stop-opacity="0"/>
+      <stop offset=".4" stop-color="#5FE0C8" stop-opacity=".55"/>
+      <stop offset=".75" stop-color="#9D7BFF" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#9D7BFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cupula" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A8EEF7"/>
+      <stop offset="1" stop-color="#3C86B5"/>
+    </linearGradient>
+    <radialGradient id="brilho">
+      <stop offset="0" stop-color="#FFE9A8" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#FFE9A8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="porta" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF2B8"/>
+      <stop offset="1" stop-color="#F6C23B"/>
+    </linearGradient>
+    <path id="spark" d="M0 -14 L4 -4 L14 0 L4 4 L0 14 L-4 4 L-14 0 L-4 -4 Z"/>
+
+    <!-- corpo e pose voando dos heróis-hambúrguer (mesmo desenho do site) -->
+    <g id="corpo" stroke="#1C1512" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M42 144 H158 V160 C158 172 148 180 136 180 H64 C52 180 42 172 42 160 Z" style="fill:var(--bun)" stroke-width="5"/>
+      <rect x="36" y="122" width="128" height="24" rx="12" fill="#6B3A22" stroke-width="5"/>
+      <path d="M34 116 H166 V124 H152 L146 138 L140 124 H112 L106 142 L100 124 H74 L68 134 L62 124 H34 Z" fill="#F6C23B" stroke-width="4"/>
+      <path d="M38 118 C38 62 64 38 100 38 C136 38 162 62 162 118 Z" style="fill:var(--bun)" stroke-width="5"/>
+      <path d="M40 78 C70 67 130 67 160 78 L160 98 C130 90 70 90 40 98 Z" fill="#1C1512" stroke="none"/>
+      <ellipse cx="78" cy="84" rx="12" ry="8" fill="#FFFFFF" stroke="none"/>
+      <ellipse cx="122" cy="84" rx="12" ry="8" fill="#FFFFFF" stroke="none"/>
+      <circle cx="81" cy="85" r="4" fill="#1C1512" stroke="none"/>
+      <circle cx="125" cy="85" r="4" fill="#1C1512" stroke="none"/>
+      <path d="M86 104 Q100 115 114 104" fill="none" stroke-width="5"/>
+    </g>
+    <symbol id="heroi-voando" viewBox="-72 20 320 210">
+      <g transform="rotate(18 100 110)">
+        <path d="M58 112 C24 98 -4 116 -34 98 C-26 124 -46 132 -62 124 C-40 156 12 168 62 158 Z" style="fill:var(--cape)" stroke="#1C1512" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M40 128 C22 142 6 150 -10 152" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+        <circle cx="-12" cy="152" r="11" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+        <path d="M82 176 C74 192 56 200 36 204 M118 178 C112 196 96 208 76 214" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+        <use xlink:href="#corpo" href="#corpo"/>
+        <path d="M160 118 C184 102 198 82 210 60" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+        <circle cx="212" cy="56" r="12" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+      </g>
+    </symbol>
+  </defs>
+
+  <!-- céu -->
+  <rect width="1600" height="900" fill="url(#ceu)"/>
+  <path d="M0 250 C300 170 600 320 900 230 S1400 140 1600 220 L1600 320 C1400 240 1100 340 900 320 S300 270 0 350 Z" fill="url(#aurora1)" opacity=".28"/>
+  <path d="M0 140 C350 90 650 200 1000 120 S1450 60 1600 110 L1600 160 C1400 120 1100 210 950 190 S350 150 0 200 Z" fill="url(#aurora1)" opacity=".16"/>
+
+  <!-- estrelas -->
+  <g fill="#FFF4DC">
+    <circle cx="40" cy="60" r="1.6"/><circle cx="120" cy="120" r="2.2"/><circle cx="210" cy="40" r="1.4"/>
+    <circle cx="330" cy="90" r="1.8"/><circle cx="420" cy="30" r="2.4"/><circle cx="480" cy="160" r="1.5"/>
+    <circle cx="560" cy="70" r="2"/><circle cx="640" cy="130" r="1.4"/><circle cx="700" cy="40" r="2.2"/>
+    <circle cx="780" cy="100" r="1.6"/><circle cx="860" cy="30" r="1.9"/><circle cx="930" cy="140" r="1.5"/>
+    <circle cx="1010" cy="60" r="2.3"/><circle cx="1090" cy="20" r="1.5"/><circle cx="1180" cy="90" r="1.8"/>
+    <circle cx="1260" cy="40" r="2.2"/><circle cx="1330" cy="130" r="1.4"/><circle cx="1400" cy="60" r="2"/>
+    <circle cx="1480" cy="110" r="1.7"/><circle cx="1550" cy="40" r="2.3"/><circle cx="1570" cy="170" r="1.5"/>
+    <circle cx="60" cy="220" r="1.5"/><circle cx="180" cy="290" r="2"/><circle cx="300" cy="230" r="1.4"/>
+    <circle cx="520" cy="260" r="1.8"/><circle cx="600" cy="330" r="1.4"/><circle cx="760" cy="250" r="2"/>
+    <circle cx="1500" cy="280" r="1.9"/><circle cx="1560" cy="360" r="1.4"/><circle cx="90" cy="400" r="1.6"/>
+    <circle cx="380" cy="380" r="1.5"/><circle cx="700" cy="420" r="1.8"/>
+  </g>
+  <g fill="#FFF4DC" class="ink" stroke-width="2">
+    <use xlink:href="#spark" href="#spark" transform="translate(150 180) scale(.8)"/>
+    <use xlink:href="#spark" href="#spark" transform="translate(600 90) scale(.6)"/>
+    <use xlink:href="#spark" href="#spark" transform="translate(1470 200) scale(.9)"/>
+    <use xlink:href="#spark" href="#spark" transform="translate(880 330) scale(.7)"/>
+  </g>
+
+  <!-- lua -->
+  <circle cx="300" cy="160" r="120" fill="url(#brilho)" opacity=".15"/>
+  <circle cx="300" cy="160" r="58" fill="#FFE9A8" class="ink" stroke-width="4"/>
+  <g fill="#F2D27A"><circle cx="282" cy="146" r="10"/><circle cx="318" cy="176" r="7"/><circle cx="310" cy="136" r="5"/></g>
+
+  <!-- holofotes -->
+  <path d="M1010 600 L760 0 L900 0 Z" fill="#FFE9A8" opacity=".06"/>
+  <path d="M1290 600 L1420 0 L1560 0 Z" fill="#FFE9A8" opacity=".06"/>
+
+  <!-- chão -->
+  <path d="M0 780 C300 740 600 760 900 750 S1400 740 1600 760 L1600 900 L0 900 Z" fill="#1D1946"/>
+  <ellipse cx="1150" cy="870" rx="680" ry="70" fill="#2A2562"/>
+
+  <!-- ala esquerda -->
+  <rect x="600" y="596" width="270" height="18" fill="#F6C23B" class="ink" stroke-width="4"/>
+  <rect x="612" y="614" width="248" height="140" fill="#E2DDF3" class="ink" stroke-width="5"/>
+  <g fill="#F6C23B" class="ink" stroke-width="3">
+    <rect x="636" y="636" width="28" height="36" rx="12"/><rect x="684" y="636" width="28" height="36" rx="12"/>
+    <rect x="732" y="636" width="28" height="36" rx="12"/><rect x="780" y="636" width="28" height="36" rx="12"/>
+    <rect x="636" y="692" width="28" height="36" rx="12"/><rect x="684" y="692" width="28" height="36" rx="12"/>
+    <rect x="732" y="692" width="28" height="36" rx="12"/><rect x="780" y="692" width="28" height="36" rx="12"/>
+  </g>
+
+  <!-- ala direita -->
+  <rect x="1430" y="596" width="270" height="18" fill="#F6C23B" class="ink" stroke-width="4"/>
+  <rect x="1440" y="614" width="248" height="140" fill="#E2DDF3" class="ink" stroke-width="5"/>
+  <g fill="#F6C23B" class="ink" stroke-width="3">
+    <rect x="1464" y="636" width="28" height="36" rx="12"/><rect x="1512" y="636" width="28" height="36" rx="12"/>
+    <rect x="1560" y="636" width="28" height="36" rx="12"/>
+    <rect x="1464" y="692" width="28" height="36" rx="12"/><rect x="1512" y="692" width="28" height="36" rx="12"/>
+    <rect x="1560" y="692" width="28" height="36" rx="12"/>
+  </g>
+
+  <!-- cúpula -->
+  <circle cx="1150" cy="300" r="230" fill="url(#brilho)" opacity=".1"/>
+  <path d="M1132 188 H1168 V214 H1132 Z" fill="#EEEAF8" class="ink" stroke-width="4"/>
+  <path d="M1128 190 C1128 170 1140 160 1150 160 C1160 160 1172 170 1172 190 Z" fill="#F6C23B" class="ink" stroke-width="4"/>
+  <use xlink:href="#spark" href="#spark" transform="translate(1150 136) scale(1.3)" fill="#FFF2B8" class="ink" stroke-width="2.5"/>
+  <path d="M968 404 C968 262 1058 208 1150 208 C1242 208 1332 262 1332 404 Z" fill="url(#cupula)" class="ink" stroke-width="5"/>
+  <g fill="none" stroke="#1C1512" stroke-width="3" opacity=".55">
+    <path d="M1150 208 V404"/>
+    <path d="M1150 208 C1100 250 1080 330 1078 404"/><path d="M1150 208 C1200 250 1220 330 1222 404"/>
+    <path d="M1150 208 C1060 240 1018 320 1012 404"/><path d="M1150 208 C1240 240 1282 320 1288 404"/>
+  </g>
+  <path d="M1010 330 C1020 280 1050 250 1090 234" fill="none" stroke="#FFFFFF" stroke-opacity=".6" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- tambor da cúpula com janelas -->
+  <rect x="960" y="400" width="380" height="74" fill="#EEEAF8" class="ink" stroke-width="5"/>
+  <g fill="#F6C23B" class="ink" stroke-width="3">
+    <path d="M990 462 V434 A12 12 0 0 1 1014 434 V462 Z"/><path d="M1034 462 V434 A12 12 0 0 1 1058 434 V462 Z"/>
+    <path d="M1242 462 V434 A12 12 0 0 1 1266 434 V462 Z"/><path d="M1286 462 V434 A12 12 0 0 1 1310 434 V462 Z"/>
+  </g>
+  <!-- emblema Brave Hero -->
+  <circle cx="1150" cy="437" r="46" fill="#F6C23B" class="ink" stroke-width="5"/>
+  <circle cx="1150" cy="437" r="36" fill="none" stroke="#DB4E3C" stroke-width="5"/>
+  <text x="1150" y="458" class="t" font-size="58" fill="#DB4E3C" text-anchor="middle">B</text>
+
+  <!-- frontão e colunas -->
+  <rect x="870" y="472" width="560" height="32" fill="#EEEAF8" class="ink" stroke-width="5"/>
+  <rect x="840" y="502" width="620" height="44" fill="#F6C23B" class="ink" stroke-width="5"/>
+  <rect x="860" y="546" width="580" height="200" fill="#D9D3EE" class="ink" stroke-width="5"/>
+  <g class="ink" stroke-width="4">
+    <g fill="#FFFFFF">
+      <rect x="880" y="552" width="30" height="186"/><rect x="942" y="552" width="30" height="186"/>
+      <rect x="1004" y="552" width="30" height="186"/><rect x="1066" y="552" width="30" height="186"/>
+      <rect x="1204" y="552" width="30" height="186"/><rect x="1266" y="552" width="30" height="186"/>
+      <rect x="1328" y="552" width="30" height="186"/><rect x="1390" y="552" width="30" height="186"/>
+    </g>
+    <g fill="#F6C23B">
+      <rect x="874" y="546" width="42" height="12"/><rect x="936" y="546" width="42" height="12"/>
+      <rect x="998" y="546" width="42" height="12"/><rect x="1060" y="546" width="42" height="12"/>
+      <rect x="1198" y="546" width="42" height="12"/><rect x="1260" y="546" width="42" height="12"/>
+      <rect x="1322" y="546" width="42" height="12"/><rect x="1384" y="546" width="42" height="12"/>
+      <rect x="874" y="734" width="42" height="12"/><rect x="936" y="734" width="42" height="12"/>
+      <rect x="998" y="734" width="42" height="12"/><rect x="1060" y="734" width="42" height="12"/>
+      <rect x="1198" y="734" width="42" height="12"/><rect x="1260" y="734" width="42" height="12"/>
+      <rect x="1322" y="734" width="42" height="12"/><rect x="1384" y="734" width="42" height="12"/>
+    </g>
+  </g>
+  <!-- porta iluminada -->
+  <ellipse cx="1150" cy="700" rx="120" ry="90" fill="url(#brilho)" opacity=".25"/>
+  <path d="M1106 746 V640 A44 44 0 0 1 1194 640 V746 Z" fill="url(#porta)" class="ink" stroke-width="5"/>
+  <path d="M1150 600 V746" stroke="#1C1512" stroke-width="3" opacity=".5"/>
+
+  <!-- escadaria -->
+  <rect x="840" y="746" width="620" height="28" fill="#E2DDF3" class="ink" stroke-width="4"/>
+  <rect x="810" y="774" width="680" height="28" fill="#D1CAE8" class="ink" stroke-width="4"/>
+  <rect x="780" y="802" width="740" height="28" fill="#C3BBE0" class="ink" stroke-width="4"/>
+
+  <!-- postes de luz e arbustos -->
+  <g class="ink" stroke-width="4">
+    <rect x="752" y="720" width="10" height="110" fill="#1C1512"/><rect x="1538" y="720" width="10" height="110" fill="#1C1512"/>
+    <circle cx="757" cy="714" r="14" fill="#FFF2B8"/><circle cx="1543" cy="714" r="14" fill="#FFF2B8"/>
+  </g>
+  <circle cx="757" cy="714" r="46" fill="url(#brilho)" opacity=".2"/>
+  <circle cx="1543" cy="714" r="46" fill="url(#brilho)" opacity=".2"/>
+  <g fill="#1F4D3A" class="ink" stroke-width="4">
+    <ellipse cx="660" cy="772" rx="60" ry="26"/><ellipse cx="720" cy="780" rx="40" ry="20"/>
+    <ellipse cx="1590" cy="772" rx="60" ry="26"/>
+  </g>
+
+  <!-- heróis voando em volta da cúpula -->
+  <use xlink:href="#heroi-voando" href="#heroi-voando" x="700" y="230" width="190" height="125" style="--bun:#4FAF3B;--cape:#DB4E3C"/>
+  <g transform="translate(1560 150) scale(-1 1)">
+    <use xlink:href="#heroi-voando" href="#heroi-voando" x="0" y="0" width="160" height="105" style="--bun:#2E9E97;--cape:#F6C23B"/>
+  </g>
+  <g transform="translate(1560 440) scale(-1 1)">
+    <use xlink:href="#heroi-voando" href="#heroi-voando" x="0" y="0" width="120" height="79" style="--bun:#E5503D;--cape:#F6C23B"/>
+  </g>
+</svg>

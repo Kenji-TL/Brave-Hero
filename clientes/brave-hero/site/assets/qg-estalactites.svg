@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 150" width="800" height="150">
+  <!-- estalactites do teto da caverna (se repetem na horizontal no topo da seção "Por dentro do QG") -->
+  <path d="M0 0 H800 V18 L780 22 L760 70 L742 24 L710 30 L690 112 L668 28 L630 26 L612 60 L596 24 L560 30 L540 130 L516 32 L480 24 L462 74 L446 26 L410 30 L392 98 L372 28 L336 22 L318 58 L302 24 L262 30 L244 120 L222 30 L186 26 L170 66 L154 24 L118 28 L100 102 L80 26 L44 22 L28 64 L14 22 L0 18 Z" fill="#221D30" stroke="#0D0B12" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="none" stroke="#3A3350" stroke-width="3" stroke-linecap="round">
+    <path d="M690 108 L679 40"/><path d="M540 124 L530 44"/><path d="M392 94 L384 40"/><path d="M244 116 L234 42"/><path d="M100 98 L92 40"/>
+  </g>
+  <g fill="#5FE0C8" fill-opacity=".5">
+    <ellipse cx="540" cy="140" rx="2.5" ry="4"/><ellipse cx="244" cy="132" rx="2.5" ry="4"/><ellipse cx="690" cy="124" rx="2" ry="3.5"/>
+  </g>
+</svg>

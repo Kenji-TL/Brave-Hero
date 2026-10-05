@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Página de HQ original da Brave Hero (usada como papel de parede, se repete sem emenda) -->
+  <defs>
+    <style>
+      .t { font-family: Impact, "Arial Black", "Helvetica Neue", Arial, sans-serif; font-weight: 900; }
+      .ink { stroke: #1C1512; stroke-linejoin: round; stroke-linecap: round; }
+    </style>
+
+    <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="1.7" fill="#1C1512" fill-opacity=".18"/>
+    </pattern>
+    <pattern id="dotsLight" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="1.5" fill="#FFFFFF" fill-opacity=".12"/>
+    </pattern>
+
+    <clipPath id="cp1"><rect width="470" height="256" rx="6"/></clipPath>
+    <clipPath id="cp2"><rect width="302" height="256" rx="6"/></clipPath>
+    <clipPath id="cp3"><rect width="250" height="246" rx="6"/></clipPath>
+    <clipPath id="cp4"><rect width="522" height="246" rx="6"/></clipPath>
+    <clipPath id="cp5"><rect width="390" height="256" rx="6"/></clipPath>
+    <clipPath id="cp6"><rect width="382" height="256" rx="6"/></clipPath>
+
+    <path id="wedge" d="M0 0 L-106 -700 L106 -700 Z"/>
+    <path id="speed" d="M0 0 L-14 -700 L14 -700 Z"/>
+    <path id="spark" d="M0 -14 L4 -4 L14 0 L4 4 L0 14 L-4 4 L-14 0 L-4 -4 Z"/>
+
+    <!-- corpo do herói-hambúrguer (mesmo desenho do site) -->
+    <g id="corpo" stroke="#1C1512" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M42 144 H158 V160 C158 172 148 180 136 180 H64 C52 180 42 172 42 160 Z" style="fill:var(--bun)" stroke-width="5"/>
+      <path d="M103 150 L93 163 H100 L96 174 L108 160 H101 Z" fill="#F6C23B" stroke-width="2.5"/>
+      <rect x="36" y="122" width="128" height="24" rx="12" fill="#6B3A22" stroke-width="5"/>
+      <path d="M34 116 H166 V124 H152 L146 138 L140 124 H112 L106 142 L100 124 H74 L68 134 L62 124 H34 Z" fill="#F6C23B" stroke-width="4"/>
+      <path d="M38 118 C38 62 64 38 100 38 C136 38 162 62 162 118 Z" style="fill:var(--bun)" stroke-width="5"/>
+      <path d="M60 70 C66 57 80 49 94 47" fill="none" stroke="#FFFFFF" stroke-opacity=".5" stroke-width="6"/>
+      <g fill="#FFF4DC" stroke="none">
+        <ellipse cx="82" cy="57" rx="4.5" ry="2.6" transform="rotate(-25 82 57)"/>
+        <ellipse cx="104" cy="50" rx="4.5" ry="2.6"/>
+        <ellipse cx="126" cy="58" rx="4.5" ry="2.6" transform="rotate(25 126 58)"/>
+      </g>
+      <path d="M40 78 C70 67 130 67 160 78 L160 98 C130 90 70 90 40 98 Z" fill="#1C1512" stroke="none"/>
+      <path d="M158 81 L182 73 L174 90 Z M158 93 L180 104 L170 89 Z" fill="#1C1512" stroke="none"/>
+      <ellipse cx="78" cy="84" rx="12" ry="8" fill="#FFFFFF" stroke="none"/>
+      <ellipse cx="122" cy="84" rx="12" ry="8" fill="#FFFFFF" stroke="none"/>
+      <circle cx="81" cy="85" r="4" fill="#1C1512" stroke="none"/>
+      <circle cx="125" cy="85" r="4" fill="#1C1512" stroke="none"/>
+      <path d="M86 104 Q100 115 114 104" fill="none" stroke-width="5"/>
+    </g>
+
+    <symbol id="heroi-bracos" viewBox="0 0 200 250">
+      <path d="M54 118 C44 168 34 204 26 238 L64 224 L100 240 L136 224 L174 238 C166 204 156 168 146 118 Z" style="fill:var(--cape)" stroke="#1C1512" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M80 176 L74 222 M120 176 L126 222" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <ellipse cx="70" cy="226" rx="15" ry="9" style="fill:var(--cape)" stroke="#1C1512" stroke-width="4"/>
+      <ellipse cx="130" cy="226" rx="15" ry="9" style="fill:var(--cape)" stroke="#1C1512" stroke-width="4"/>
+      <use xlink:href="#corpo" href="#corpo"/>
+      <path d="M42 124 C20 104 22 54 46 16 M158 124 C180 104 178 54 154 16" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <circle cx="46" cy="14" r="11" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+      <circle cx="154" cy="14" r="11" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+    </symbol>
+
+    <symbol id="heroi-voando" viewBox="-72 20 320 210">
+      <g transform="rotate(18 100 110)">
+        <path d="M58 112 C24 98 -4 116 -34 98 C-26 124 -46 132 -62 124 C-40 156 12 168 62 158 Z" style="fill:var(--cape)" stroke="#1C1512" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M40 128 C22 142 6 150 -10 152" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+        <circle cx="-12" cy="152" r="11" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+        <path d="M82 176 C74 192 56 200 36 204 M118 178 C112 196 96 208 76 214" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+        <ellipse cx="30" cy="205" rx="14" ry="9" transform="rotate(15 30 205)" style="fill:var(--cape)" stroke="#1C1512" stroke-width="4"/>
+        <ellipse cx="70" cy="215" rx="14" ry="9" transform="rotate(15 70 215)" style="fill:var(--cape)" stroke="#1C1512" stroke-width="4"/>
+        <use xlink:href="#corpo" href="#corpo"/>
+        <path d="M160 118 C184 102 198 82 210 60" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+        <circle cx="212" cy="56" r="12" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+      </g>
+    </symbol>
+  </defs>
+
+  <rect width="800" height="800" fill="#FFF8E9"/>
+
+  <!-- QUADRO 1: a Ilha com fome, sinal do burger no céu -->
+  <g transform="translate(7 7)">
+    <g clip-path="url(#cp1)">
+      <rect width="470" height="256" fill="#243055"/>
+      <g fill="#FFF4DC">
+        <circle cx="40" cy="80" r="2"/><circle cx="96" cy="70" r="1.5"/><circle cx="150" cy="95" r="2.2"/>
+        <circle cx="210" cy="72" r="1.6"/><circle cx="300" cy="18" r="2"/><circle cx="440" cy="110" r="1.8"/>
+        <circle cx="455" cy="30" r="2.4"/><circle cx="270" cy="96" r="1.4"/><circle cx="20" cy="120" r="1.6"/>
+      </g>
+      <path d="M232 104 L330 16 L426 44 Z" fill="#FFE9A8" fill-opacity=".35"/>
+      <circle cx="380" cy="40" r="36" fill="#FFE9A8" class="ink" stroke-width="4"/>
+      <g fill="#1C1512">
+        <path d="M358 40 C358 22 368 16 380 16 C392 16 402 22 402 40 Z"/>
+        <rect x="355" y="43" width="50" height="8" rx="4"/>
+        <path d="M358 54 H402 V58 C402 62 398 64 394 64 H366 C362 64 358 62 358 58 Z"/>
+      </g>
+      <g fill="#1C1512">
+        <rect x="8" y="150" width="60" height="106"/><rect x="72" y="118" width="52" height="138"/>
+        <rect x="128" y="172" width="70" height="84"/><rect x="202" y="104" width="56" height="152"/>
+        <rect x="262" y="142" width="66" height="114"/><rect x="332" y="168" width="60" height="88"/>
+        <rect x="396" y="126" width="72" height="130"/>
+      </g>
+      <g fill="#F6C23B">
+        <rect x="20" y="164" width="9" height="11"/><rect x="44" y="190" width="9" height="11"/>
+        <rect x="84" y="132" width="9" height="11"/><rect x="104" y="160" width="9" height="11"/>
+        <rect x="88" y="200" width="9" height="11"/><rect x="146" y="186" width="9" height="11"/>
+        <rect x="172" y="210" width="9" height="11"/><rect x="214" y="120" width="9" height="11"/>
+        <rect x="236" y="150" width="9" height="11"/><rect x="216" y="190" width="9" height="11"/>
+        <rect x="278" y="158" width="9" height="11"/><rect x="304" y="186" width="9" height="11"/>
+        <rect x="346" y="182" width="9" height="11"/><rect x="368" y="210" width="9" height="11"/>
+        <rect x="410" y="140" width="9" height="11"/><rect x="440" y="170" width="9" height="11"/>
+        <rect x="418" y="206" width="9" height="11"/>
+      </g>
+      <rect width="470" height="256" fill="url(#dotsLight)"/>
+      <rect x="14" y="14" width="262" height="42" fill="#F6C23B" class="ink" stroke-width="4"/>
+      <text x="26" y="42" class="t" font-size="18" fill="#1C1512">A ILHA ESTAVA COM FOME...</text>
+    </g>
+    <rect width="470" height="256" rx="6" fill="none" class="ink" stroke-width="6"/>
+  </g>
+
+  <!-- QUADRO 2: o herói verde sai voando -->
+  <g transform="translate(491 7)">
+    <g clip-path="url(#cp2)">
+      <rect width="302" height="256" fill="#DB4E3C"/>
+      <g transform="translate(151 128)" fill="#FFFFFF" fill-opacity=".22">
+        <use xlink:href="#speed" href="#speed"/><use xlink:href="#speed" href="#speed" transform="rotate(20)"/>
+        <use xlink:href="#speed" href="#speed" transform="rotate(40)"/><use xlink:href="#speed" href="#speed" transform="rotate(60)"/>
+        <use xlink:href="#speed" href="#speed" transform="rotate(80)"/><use xlink:href="#speed" href="#speed" transform="rotate(100)"/>
+        <use xlink:href="#speed" href="#speed" transform="rotate(120)"/><use xlink:href="#speed" href="#speed" transform="rotate(140)"/>
+        <use xlink:href="#speed" href="#speed" transform="rotate(160)"/><use xlink:href="#speed" href="#speed" transform="rotate(180)"/>
+        <use xlink:href="#speed" href="#speed" transform="rotate(200)"/><use xlink:href="#speed" href="#speed" transform="rotate(220)"/>
+        <use xlink:href="#speed" href="#speed" transform="rotate(240)"/><use xlink:href="#speed" href="#speed" transform="rotate(260)"/>
+        <use xlink:href="#speed" href="#speed" transform="rotate(280)"/><use xlink:href="#speed" href="#speed" transform="rotate(300)"/>
+        <use xlink:href="#speed" href="#speed" transform="rotate(320)"/><use xlink:href="#speed" href="#speed" transform="rotate(340)"/>
+      </g>
+      <use xlink:href="#heroi-voando" href="#heroi-voando" x="18" y="30" width="236" height="155" style="--bun:#4FAF3B;--cape:#F6C23B"/>
+      <text x="138" y="236" class="t ink" font-size="54" fill="#F6C23B" stroke-width="3" paint-order="stroke" transform="rotate(-8 200 220)">ZOOM!</text>
+    </g>
+    <rect width="302" height="256" rx="6" fill="none" class="ink" stroke-width="6"/>
+  </g>
+
+  <!-- QUADRO 3: o vermelho chama reforço -->
+  <g transform="translate(7 277)">
+    <g clip-path="url(#cp3)">
+      <rect width="250" height="246" fill="#2E9E97"/>
+      <rect width="250" height="246" fill="url(#dots)"/>
+      <use xlink:href="#heroi-bracos" href="#heroi-bracos" x="58" y="84" width="134" height="168" style="--bun:#E5503D;--cape:#F6C23B"/>
+      <rect x="12" y="12" width="226" height="64" rx="30" fill="#FFFFFF" class="ink" stroke-width="4"/>
+      <path d="M112 74 L124 100 L140 74" fill="#FFFFFF" class="ink" stroke-width="4"/>
+      <rect x="110" y="70" width="34" height="6" fill="#FFFFFF"/>
+      <text x="125" y="40" class="t" font-size="20" fill="#1C1512" text-anchor="middle">CHAMEM OS</text>
+      <text x="125" y="64" class="t" font-size="20" fill="#DB4E3C" text-anchor="middle">HERÓIS!</text>
+    </g>
+    <rect width="250" height="246" rx="6" fill="none" class="ink" stroke-width="6"/>
+  </g>
+
+  <!-- QUADRO 4: os três heróis juntos -->
+  <g transform="translate(271 277)">
+    <g clip-path="url(#cp4)">
+      <rect width="522" height="246" fill="#F6C23B"/>
+      <g transform="translate(261 170)" fill="#FFFFFF" fill-opacity=".35">
+        <use xlink:href="#wedge" href="#wedge"/><use xlink:href="#wedge" href="#wedge" transform="rotate(40)"/>
+        <use xlink:href="#wedge" href="#wedge" transform="rotate(80)"/><use xlink:href="#wedge" href="#wedge" transform="rotate(120)"/>
+        <use xlink:href="#wedge" href="#wedge" transform="rotate(160)"/><use xlink:href="#wedge" href="#wedge" transform="rotate(200)"/>
+        <use xlink:href="#wedge" href="#wedge" transform="rotate(240)"/><use xlink:href="#wedge" href="#wedge" transform="rotate(280)"/>
+        <use xlink:href="#wedge" href="#wedge" transform="rotate(320)"/>
+      </g>
+      <use xlink:href="#heroi-bracos" href="#heroi-bracos" x="40" y="68" width="140" height="175" style="--bun:#4FAF3B;--cape:#DB4E3C"/>
+      <use xlink:href="#heroi-bracos" href="#heroi-bracos" x="190" y="60" width="140" height="175" style="--bun:#E5503D;--cape:#F6C23B"/>
+      <use xlink:href="#heroi-bracos" href="#heroi-bracos" x="340" y="68" width="140" height="175" style="--bun:#2E9E97;--cape:#DB4E3C"/>
+      <text x="16" y="62" class="t ink" font-size="50" fill="#DB4E3C" stroke-width="3" paint-order="stroke" transform="rotate(-10 60 50)">BAM!</text>
+      <rect x="318" y="12" width="192" height="38" fill="#FFFFFF" class="ink" stroke-width="4"/>
+      <text x="414" y="38" class="t" font-size="18" fill="#1C1512" text-anchor="middle">OS TRÊS HERÓIS!</text>
+    </g>
+    <rect width="522" height="246" rx="6" fill="none" class="ink" stroke-width="6"/>
+  </g>
+
+  <!-- QUADRO 5: a missão -->
+  <g transform="translate(7 537)">
+    <g clip-path="url(#cp5)">
+      <rect width="390" height="256" fill="#FFE9A8"/>
+      <rect width="390" height="256" fill="url(#dots)"/>
+      <ellipse cx="195" cy="218" rx="150" ry="26" fill="#FFFFFF" class="ink" stroke-width="5"/>
+      <path d="M105 170 H285 V190 C285 200 277 206 267 206 H123 C113 206 105 200 105 190 Z" fill="#E9A04A" class="ink" stroke-width="5"/>
+      <rect x="95" y="146" width="200" height="30" rx="14" fill="#6B3A22" class="ink" stroke-width="5"/>
+      <path d="M92 142 H298 V150 H280 L272 166 L264 150 H220 L212 170 L204 150 H150 L142 164 L134 150 H92 Z" fill="#F6C23B" class="ink" stroke-width="4"/>
+      <rect x="108" y="130" width="174" height="13" rx="6" fill="#E5503D" class="ink" stroke-width="4"/>
+      <path d="M96 132 Q106 118 116 130 Q126 118 136 130 Q146 118 156 130 Q166 118 176 130 Q186 118 196 130 Q206 118 216 130 Q226 118 236 130 Q246 118 256 130 Q266 118 276 130 Q286 118 294 132 Z" fill="#4FAF3B" class="ink" stroke-width="4"/>
+      <path d="M100 128 C100 72 150 54 195 54 C240 54 290 72 290 128 Z" fill="#E9A04A" class="ink" stroke-width="5"/>
+      <path d="M126 84 C136 70 152 64 168 62" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="7" stroke-linecap="round"/>
+      <g fill="#FFF4DC">
+        <ellipse cx="170" cy="78" rx="5" ry="3" transform="rotate(-20 170 78)"/><ellipse cx="200" cy="68" rx="5" ry="3"/>
+        <ellipse cx="232" cy="80" rx="5" ry="3" transform="rotate(20 232 80)"/><ellipse cx="190" cy="98" rx="5" ry="3"/>
+        <ellipse cx="252" cy="104" rx="5" ry="3" transform="rotate(25 252 104)"/><ellipse cx="146" cy="104" rx="5" ry="3" transform="rotate(-25 146 104)"/>
+      </g>
+      <g fill="#FFFFFF" class="ink" stroke-width="2.5">
+        <use xlink:href="#spark" href="#spark" transform="translate(60 110)"/>
+        <use xlink:href="#spark" href="#spark" transform="translate(330 80) scale(.8)"/>
+        <use xlink:href="#spark" href="#spark" transform="translate(340 170) scale(.6)"/>
+      </g>
+      <rect x="12" y="12" width="232" height="38" fill="#F6C23B" class="ink" stroke-width="4"/>
+      <text x="24" y="38" class="t" font-size="18" fill="#1C1512">MISSÃO: MATAR A FOME</text>
+    </g>
+    <rect width="390" height="256" rx="6" fill="none" class="ink" stroke-width="6"/>
+  </g>
+
+  <!-- QUADRO 6: missão cumprida -->
+  <g transform="translate(411 537)">
+    <g clip-path="url(#cp6)">
+      <rect width="382" height="256" fill="#DB4E3C"/>
+      <g transform="translate(150 150)" fill="#F6C23B" fill-opacity=".45">
+        <use xlink:href="#wedge" href="#wedge"/><use xlink:href="#wedge" href="#wedge" transform="rotate(40)"/>
+        <use xlink:href="#wedge" href="#wedge" transform="rotate(80)"/><use xlink:href="#wedge" href="#wedge" transform="rotate(120)"/>
+        <use xlink:href="#wedge" href="#wedge" transform="rotate(160)"/><use xlink:href="#wedge" href="#wedge" transform="rotate(200)"/>
+        <use xlink:href="#wedge" href="#wedge" transform="rotate(240)"/><use xlink:href="#wedge" href="#wedge" transform="rotate(280)"/>
+        <use xlink:href="#wedge" href="#wedge" transform="rotate(320)"/>
+      </g>
+      <text x="18" y="196" class="t ink" font-size="84" fill="#F6C23B" stroke-width="5" paint-order="stroke" transform="rotate(-10 120 170)">POW!</text>
+      <use xlink:href="#heroi-bracos" href="#heroi-bracos" x="240" y="96" width="124" height="155" style="--bun:#2E9E97;--cape:#F6C23B"/>
+      <rect x="150" y="12" width="220" height="64" rx="30" fill="#FFFFFF" class="ink" stroke-width="4"/>
+      <path d="M284 74 L300 100 L312 74" fill="#FFFFFF" class="ink" stroke-width="4"/>
+      <rect x="282" y="70" width="32" height="6" fill="#FFFFFF"/>
+      <text x="260" y="40" class="t" font-size="20" fill="#1C1512" text-anchor="middle">MISSÃO</text>
+      <text x="260" y="64" class="t" font-size="20" fill="#DB4E3C" text-anchor="middle">CUMPRIDA!</text>
+    </g>
+    <rect width="382" height="256" rx="6" fill="none" class="ink" stroke-width="6"/>
+  </g>
+</svg>

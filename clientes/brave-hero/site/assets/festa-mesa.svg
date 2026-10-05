@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 800" width="1600" height="800">
+  <!-- Mesa redonda dos heróis em festa — ilustração original da Brave Hero (fundo da seção "Aniversário de herói") -->
+  <defs>
+    <style>
+      .ink { stroke: #1C1512; stroke-linejoin: round; stroke-linecap: round; }
+      .t { font-family: Impact, "Arial Black", "Helvetica Neue", Arial, sans-serif; font-weight: 900; }
+    </style>
+
+    <g id="balao">
+      <ellipse cx="0" cy="0" rx="44" ry="54" style="fill:var(--c)" class="ink" stroke-width="4"/>
+      <path d="M-7 52 L7 52 L0 63 Z" style="fill:var(--c)" class="ink" stroke-width="3"/>
+      <ellipse cx="-15" cy="-20" rx="9" ry="16" fill="#FFFFFF" fill-opacity=".4" transform="rotate(20 -15 -20)"/>
+    </g>
+
+    <!-- corpo do herói-hambúrguer (mesmo desenho do site) -->
+    <g id="corpo" stroke="#1C1512" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M42 144 H158 V160 C158 172 148 180 136 180 H64 C52 180 42 172 42 160 Z" style="fill:var(--bun)" stroke-width="5"/>
+      <rect x="36" y="122" width="128" height="24" rx="12" fill="#6B3A22" stroke-width="5"/>
+      <path d="M34 116 H166 V124 H152 L146 138 L140 124 H112 L106 142 L100 124 H74 L68 134 L62 124 H34 Z" fill="#F6C23B" stroke-width="4"/>
+      <path d="M38 118 C38 62 64 38 100 38 C136 38 162 62 162 118 Z" style="fill:var(--bun)" stroke-width="5"/>
+      <path d="M40 78 C70 67 130 67 160 78 L160 98 C130 90 70 90 40 98 Z" fill="#1C1512" stroke="none"/>
+      <ellipse cx="78" cy="84" rx="12" ry="8" fill="#FFFFFF" stroke="none"/>
+      <ellipse cx="122" cy="84" rx="12" ry="8" fill="#FFFFFF" stroke="none"/>
+      <circle cx="81" cy="85" r="4" fill="#1C1512" stroke="none"/>
+      <circle cx="125" cy="85" r="4" fill="#1C1512" stroke="none"/>
+      <path d="M82 102 Q100 122 118 102 Z" fill="#7A1F14" stroke-width="4"/>
+    </g>
+    <symbol id="heroi-bracos" viewBox="0 0 200 250">
+      <path d="M54 118 C44 168 34 204 26 238 L64 224 L100 240 L136 224 L174 238 C166 204 156 168 146 118 Z" style="fill:var(--cape)" stroke="#1C1512" stroke-width="5" stroke-linejoin="round"/>
+      <use xlink:href="#corpo" href="#corpo"/>
+      <path d="M42 124 C20 104 22 54 46 16 M158 124 C180 104 178 54 154 16" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <circle cx="46" cy="14" r="11" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+      <circle cx="154" cy="14" r="11" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+    </symbol>
+
+    <!-- cadeira de encosto alto -->
+    <g id="cadeira">
+      <rect x="-78" y="0" width="156" height="230" rx="42" fill="#25163F" class="ink" stroke-width="5"/>
+      <rect x="-64" y="14" width="128" height="202" rx="32" fill="none" stroke="#F6C23B" stroke-width="3" stroke-opacity=".5"/>
+    </g>
+
+    <!-- chapeuzinho de festa -->
+    <g id="chapeu">
+      <path d="M-24 40 L0 -22 L24 40 Z" style="fill:var(--h)" class="ink" stroke-width="4"/>
+      <circle cx="0" cy="-26" r="8" fill="#FFFFFF" class="ink" stroke-width="3"/>
+    </g>
+  </defs>
+
+  <!-- balões nos cantos -->
+  <g fill="none" stroke="#FFF4DC" stroke-opacity=".5" stroke-width="2">
+    <path d="M90 232 Q140 420 170 600"/><path d="M175 182 Q185 400 170 600"/><path d="M225 292 Q200 450 170 600"/>
+    <path d="M1510 232 Q1460 420 1430 600"/><path d="M1425 182 Q1415 400 1430 600"/><path d="M1375 292 Q1400 450 1430 600"/>
+  </g>
+  <use xlink:href="#balao" href="#balao" transform="translate(175 120)" style="--c:#F6C23B"/>
+  <use xlink:href="#balao" href="#balao" transform="translate(90 170)" style="--c:#DB4E3C"/>
+  <use xlink:href="#balao" href="#balao" transform="translate(225 230)" style="--c:#2E9E97"/>
+  <use xlink:href="#balao" href="#balao" transform="translate(1425 120)" style="--c:#DB4E3C"/>
+  <use xlink:href="#balao" href="#balao" transform="translate(1510 170)" style="--c:#2E9E97"/>
+  <use xlink:href="#balao" href="#balao" transform="translate(1375 230)" style="--c:#F6C23B"/>
+
+  <!-- cadeiras -->
+  <use xlink:href="#cadeira" href="#cadeira" transform="translate(360 410)"/>
+  <use xlink:href="#cadeira" href="#cadeira" transform="translate(580 374)"/>
+  <use xlink:href="#cadeira" href="#cadeira" transform="translate(800 364)"/>
+  <use xlink:href="#cadeira" href="#cadeira" transform="translate(1020 374)"/>
+  <use xlink:href="#cadeira" href="#cadeira" transform="translate(1240 410)"/>
+
+  <!-- heróis comemorando -->
+  <use xlink:href="#heroi-bracos" href="#heroi-bracos" x="265" y="440" width="190" height="237.5" style="--bun:#4FAF3B;--cape:#DB4E3C"/>
+  <use xlink:href="#heroi-bracos" href="#heroi-bracos" x="485" y="404" width="190" height="237.5" style="--bun:#2E9E97;--cape:#F6C23B"/>
+  <use xlink:href="#heroi-bracos" href="#heroi-bracos" x="705" y="394" width="190" height="237.5" style="--bun:#E5503D;--cape:#F6C23B"/>
+  <use xlink:href="#heroi-bracos" href="#heroi-bracos" x="925" y="404" width="190" height="237.5" style="--bun:#4FAF3B;--cape:#F6C23B"/>
+  <use xlink:href="#heroi-bracos" href="#heroi-bracos" x="1145" y="440" width="190" height="237.5" style="--bun:#2E9E97;--cape:#DB4E3C"/>
+
+  <!-- chapeuzinhos -->
+  <use xlink:href="#chapeu" href="#chapeu" transform="translate(360 440) rotate(-8)" style="--h:#DB4E3C"/>
+  <use xlink:href="#chapeu" href="#chapeu" transform="translate(580 404) rotate(6)" style="--h:#F6C23B"/>
+  <use xlink:href="#chapeu" href="#chapeu" transform="translate(800 394)" style="--h:#2E9E97"/>
+  <use xlink:href="#chapeu" href="#chapeu" transform="translate(1020 404) rotate(-6)" style="--h:#DB4E3C"/>
+  <use xlink:href="#chapeu" href="#chapeu" transform="translate(1240 440) rotate(8)" style="--h:#F6C23B"/>
+
+  <!-- mesa redonda -->
+  <ellipse cx="800" cy="668" rx="562" ry="122" fill="#1B1230" class="ink" stroke-width="6"/>
+  <ellipse cx="800" cy="640" rx="560" ry="120" fill="#34265C" class="ink" stroke-width="6"/>
+  <ellipse cx="800" cy="640" rx="548" ry="112" fill="none" stroke="#D9A932" stroke-width="5"/>
+
+  <!-- B gigante no centro da mesa -->
+  <g transform="translate(800 640) scale(1 .32)">
+    <circle r="190" fill="#E8B53A" stroke="#1C1512" stroke-width="16"/>
+    <circle r="150" fill="none" stroke="#C9452F" stroke-width="24"/>
+    <text x="0" y="96" class="t" font-size="270" fill="#C9452F" text-anchor="middle">B</text>
+  </g>
+
+  <!-- pratinhos -->
+  <g class="ink" stroke-width="3">
+    <ellipse cx="360" cy="596" rx="36" ry="10" fill="#EDE7F5"/><ellipse cx="580" cy="560" rx="36" ry="10" fill="#EDE7F5"/>
+    <ellipse cx="1020" cy="560" rx="36" ry="10" fill="#EDE7F5"/><ellipse cx="1240" cy="596" rx="36" ry="10" fill="#EDE7F5"/>
+  </g>
+
+  <!-- bolo com velinhas -->
+  <ellipse cx="470" cy="712" rx="74" ry="18" fill="#EDE7F5" class="ink" stroke-width="4"/>
+  <rect x="420" y="642" width="100" height="62" rx="8" fill="#F5E2A6" class="ink" stroke-width="4"/>
+  <path d="M420 646 C420 638 520 638 520 646 L520 660 C512 672 504 660 498 666 C490 676 482 660 474 668 C466 676 458 660 450 668 C442 676 434 660 428 666 C424 668 420 664 420 660 Z" fill="#E99AB3" class="ink" stroke-width="4"/>
+  <g class="ink" stroke-width="2">
+    <rect x="449" y="608" width="7" height="32" fill="#2E9E97"/><rect x="467" y="604" width="7" height="36" fill="#DB4E3C"/>
+    <rect x="485" y="608" width="7" height="32" fill="#4FAF3B"/>
+  </g>
+  <g fill="#F6C23B" class="ink" stroke-width="2">
+    <path d="M452.5 594 C458 602 458 606 452.5 606 C447 606 447 602 452.5 594 Z"/>
+    <path d="M470.5 590 C476 598 476 602 470.5 602 C465 602 465 598 470.5 590 Z"/>
+    <path d="M488.5 594 C494 602 494 606 488.5 606 C483 606 483 602 488.5 594 Z"/>
+  </g>
+
+  <!-- presentes -->
+  <g class="ink" stroke-width="4">
+    <rect x="1098" y="662" width="64" height="48" fill="#2E9E97"/>
+    <rect x="1124" y="662" width="12" height="48" fill="#E8B53A"/>
+    <rect x="1172" y="676" width="44" height="36" fill="#C9452F"/>
+  </g>
+</svg>

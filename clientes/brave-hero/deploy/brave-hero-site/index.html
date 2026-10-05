@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brave Hero Burguer | Hamburgueria Temática na Ilha do Governador</title>
+  <meta name="description" content="Hamburgueria artesanal e espaço temático no Cocotá, Ilha do Governador. Burger caprichado, chope gelado, espaço kids e festas de aniversário. Terça a domingo, 17h às 23h.">
+  <meta property="og:title" content="Brave Hero Burguer — Todo herói tem fome">
+  <meta property="og:description" content="Hamburgueria temática na Ilha do Governador. Burger artesanal, chope gelado, espaço kids e festas.">
+  <meta property="og:image" content="assets/tres-herois.jpg">
+  <meta name="theme-color" content="#F6C23B">
+  <link rel="icon" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!--
+    PENDÊNCIAS (ver ../briefing.md):
+    - Trocar os textos marcados com "EDITAR" pelo conteúdo real
+    - Fotos (assets/fotos e assets/fundo): hoje são recortes de posts do Instagram da Brave Hero;
+      trocar pelos originais do cliente (sem arquivo em assets/fotos, aparece o painel em quadrinho)
+    - Avaliações: reais do Google (10/09/2026) — atualizar nota e textos de tempos em tempos
+    - Logo em PNG/SVG transparente (hoje: assets/logo.jpg)
+  -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Brave Hero Burguer",
+    "servesCuisine": "Hambúrguer artesanal",
+    "telephone": "+55 21 98074-0586",
+    "image": "assets/tres-herois.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Estrada da Cacuia, 1259 - Cocotá",
+      "addressLocality": "Rio de Janeiro",
+      "addressRegion": "RJ",
+      "postalCode": "21921-001",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "17:00",
+      "closes": "23:00"
+    }],
+    "hasMenu": "https://app.cardapioweb.com/brave_hero",
+    "sameAs": ["https://www.instagram.com/braveheroburguer/"]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== MASCOTES (desenhos originais, reaproveitados pelo site via <use>) ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- corpo do herói-hambúrguer: a cor do pão vem da variável --bun -->
+      <g id="corpo" stroke="#1C1512" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M42 144 H158 V160 C158 172 148 180 136 180 H64 C52 180 42 172 42 160 Z" style="fill:var(--bun)" stroke-width="5"/>
+        <path d="M103 150 L93 163 H100 L96 174 L108 160 H101 Z" fill="#F6C23B" stroke-width="2.5"/>
+        <rect x="36" y="122" width="128" height="24" rx="12" fill="#6B3A22" stroke-width="5"/>
+        <path d="M34 116 H166 V124 H152 L146 138 L140 124 H112 L106 142 L100 124 H74 L68 134 L62 124 H34 Z" fill="#F6C23B" stroke-width="4"/>
+        <path d="M38 118 C38 62 64 38 100 38 C136 38 162 62 162 118 Z" style="fill:var(--bun)" stroke-width="5"/>
+        <path d="M60 70 C66 57 80 49 94 47" fill="none" stroke="#FFFFFF" stroke-opacity=".5" stroke-width="6"/>
+        <g fill="#FFF4DC" stroke="none">
+          <ellipse cx="82" cy="57" rx="4.5" ry="2.6" transform="rotate(-25 82 57)"/>
+          <ellipse cx="104" cy="50" rx="4.5" ry="2.6"/>
+          <ellipse cx="126" cy="58" rx="4.5" ry="2.6" transform="rotate(25 126 58)"/>
+        </g>
+        <path d="M40 78 C70 67 130 67 160 78 L160 98 C130 90 70 90 40 98 Z" fill="#1C1512" stroke="none"/>
+        <path d="M158 81 L182 73 L174 90 Z M158 93 L180 104 L170 89 Z" fill="#1C1512" stroke="none"/>
+        <ellipse cx="78" cy="84" rx="12" ry="8" fill="#FFFFFF" stroke="none"/>
+        <ellipse cx="122" cy="84" rx="12" ry="8" fill="#FFFFFF" stroke="none"/>
+        <circle cx="81" cy="85" r="4" fill="#1C1512" stroke="none"/>
+        <circle cx="125" cy="85" r="4" fill="#1C1512" stroke="none"/>
+        <path d="M86 104 Q100 115 114 104" fill="none" stroke-width="5"/>
+      </g>
+    </defs>
+
+    <!-- pose: braços pra cima (segurando placa ou pendurado) -->
+    <symbol id="heroi-bracos" viewBox="0 0 200 250">
+      <path d="M54 118 C44 168 34 204 26 238 L64 224 L100 240 L136 224 L174 238 C166 204 156 168 146 118 Z" style="fill:var(--cape)" stroke="#1C1512" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M80 176 L74 222 M120 176 L126 222" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <ellipse cx="70" cy="226" rx="15" ry="9" style="fill:var(--cape)" stroke="#1C1512" stroke-width="4"/>
+      <ellipse cx="130" cy="226" rx="15" ry="9" style="fill:var(--cape)" stroke="#1C1512" stroke-width="4"/>
+      <use href="#corpo"/>
+      <path d="M42 124 C20 104 22 54 46 16 M158 124 C180 104 178 54 154 16" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <circle cx="46" cy="14" r="11" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+      <circle cx="154" cy="14" r="11" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+    </symbol>
+
+    <!-- pose: voando -->
+    <symbol id="heroi-voando" viewBox="-72 20 320 210">
+      <g transform="rotate(18 100 110)">
+        <path d="M58 112 C24 98 -4 116 -34 98 C-26 124 -46 132 -62 124 C-40 156 12 168 62 158 Z" style="fill:var(--cape)" stroke="#1C1512" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M40 128 C22 142 6 150 -10 152" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+        <circle cx="-12" cy="152" r="11" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+        <path d="M82 176 C74 192 56 200 36 204 M118 178 C112 196 96 208 76 214" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+        <ellipse cx="30" cy="205" rx="14" ry="9" transform="rotate(15 30 205)" style="fill:var(--cape)" stroke="#1C1512" stroke-width="4"/>
+        <ellipse cx="70" cy="215" rx="14" ry="9" transform="rotate(15 70 215)" style="fill:var(--cape)" stroke="#1C1512" stroke-width="4"/>
+        <use href="#corpo"/>
+        <path d="M160 118 C184 102 198 82 210 60" stroke="#1C1512" stroke-width="9" stroke-linecap="round" fill="none"/>
+        <circle cx="212" cy="56" r="12" fill="#FFFFFF" stroke="#1C1512" stroke-width="4"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <!-- ===== TOPO ===== -->
+  <header class="topbar" id="topo">
+    <div class="wrap topbar__inner">
+      <a href="#topo" class="brand" aria-label="Brave Hero — início">
+        <img src="assets/logo.jpg" alt="" width="44" height="44">
+        <span>Brave Hero</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menu" class="nav">
+        <a href="#cardapio">Cardápio</a>
+        <a href="#espaco">Espaço kids</a>
+        <a href="#festas">Festas</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#visite">Como chegar</a>
+        <a class="btn btn--red btn--sm" href="https://app.cardapioweb.com/brave_hero" target="_blank" rel="noopener">Pedir agora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <!-- Fotos do local passando devagar no fundo: a lista fica em script.js (FOTOS_FUNDO) -->
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">Hamburgueria temática · Ilha do Governador</p>
+          <h1 class="display">Todo herói<br><span>tem fome.</span></h1>
+          <p class="lead">
+            Hambúrguer artesanal, chope gelado e um espaço kids pros pequenos heróis.
+            Aqui não é só sobre hambúrguer: é sobre viver momentos incríveis.
+          </p>
+          <div class="hero__ctas">
+            <a class="btn btn--red" href="https://app.cardapioweb.com/brave_hero" target="_blank" rel="noopener">Fazer pedido</a>
+            <a class="btn btn--light" href="https://wa.me/5521980740586?text=Ol%C3%A1!%20Quero%20fazer%20uma%20reserva%20na%20Brave%20Hero." target="_blank" rel="noopener">Reservar mesa</a>
+          </div>
+          <p class="status" id="status" aria-live="polite">
+            <span class="status__dot"></span>
+            <span class="status__text">Terça a domingo · 17h às 23h</span>
+          </p>
+        </div>
+
+        <div class="hero__art">
+          <a class="panel panel--tilt panel--link" href="https://app.cardapioweb.com/brave_hero" target="_blank" rel="noopener">
+            <img src="assets/tres-herois.jpg" alt="Combo Três Heróis: três hambúrgueres com pão verde, vermelho e azul, cheddar derretido e batata frita" width="949" height="345" fetchpriority="high">
+            <span class="panel__caption">Pão verde, vermelho e azul: é o Combo Três Heróis. <b>Toque pra pedir →</b></span>
+          </a>
+          <div class="burst" aria-label="Cupom BRAVE10: 10% de desconto no primeiro pedido">
+            <span class="burst__small">cupom</span>
+            <strong>BRAVE10</strong>
+            <span class="burst__small">10% off no 1º pedido</span>
+          </div>
+          <svg class="heroi heroi--verde heroi--pendurado" viewBox="0 0 200 250" aria-hidden="true"><use href="#heroi-bracos" width="200" height="250"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAIXA INFINITA (dois grupos idênticos) ===== -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__group">
+        <span>Hambúrguer artesanal</span><i>★</i><span>Chope gelado</span><i>★</i><span>Espaço kids</span><i>★</i><span>Festas de aniversário</span><i>★</i><span>Delivery</span><i>★</i>
+        <span>Hambúrguer artesanal</span><i>★</i><span>Chope gelado</span><i>★</i><span>Espaço kids</span><i>★</i><span>Festas de aniversário</span><i>★</i><span>Delivery</span><i>★</i>
+      </div>
+      <div class="ticker__group">
+        <span>Hambúrguer artesanal</span><i>★</i><span>Chope gelado</span><i>★</i><span>Espaço kids</span><i>★</i><span>Festas de aniversário</span><i>★</i><span>Delivery</span><i>★</i>
+        <span>Hambúrguer artesanal</span><i>★</i><span>Chope gelado</span><i>★</i><span>Espaço kids</span><i>★</i><span>Festas de aniversário</span><i>★</i><span>Delivery</span><i>★</i>
+      </div>
+    </div>
+
+    <!-- ===== CARDÁPIO ===== -->
+    <section class="section section--hq" id="cardapio">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow eyebrow--red">O arsenal</p>
+          <h2 class="display display--md">Poder de fogo no prato</h2>
+          <p>Tudo feito na casa, do jeito que um herói merece depois de salvar o dia.</p>
+        </header>
+
+        <!-- Fotos e nomes do cardápio online da Brave Hero (CardápioWeb) -->
+        <div class="cards">
+          <a class="card card--green" href="https://app.cardapioweb.com/brave_hero" target="_blank" rel="noopener">
+            <img class="card__img" src="assets/cardapio/burger-egg-flash.jpg" alt="Egg Flash Burguer: blend, ovo, bacon, cheddar e salada no pão brioche" width="700" height="700" loading="lazy">
+            <div class="card__body">
+              <span class="card__tag">01</span>
+              <h3>Burgers artesanais</h3>
+              <p>Super Brave, Trovão de Asgard, Tempestade, Egg Flash e os smashes da casa. Cada burger, um herói.</p>
+              <span class="card__cta">Ver no cardápio →</span>
+            </div>
+          </a>
+          <a class="card card--red" href="https://app.cardapioweb.com/brave_hero" target="_blank" rel="noopener">
+            <img class="card__img" src="assets/cardapio/aneis-de-cebola.jpg" alt="Porção de anéis de cebola empanados" width="700" height="700" loading="lazy">
+            <div class="card__body">
+              <span class="card__tag">02</span>
+              <h3>Petiscos</h3>
+              <p>Anéis de cebola, dadinhos de tapioca com melado, coxinhas com cream cheese, nuggets e fritas Brave.</p>
+              <span class="card__cta">Ver no cardápio →</span>
+            </div>
+          </a>
+          <!-- EDITAR: trocar a ilustração por foto real do chope (ex.: <img class="card__img" src="assets/cardapio/chope.jpg" ...>) -->
+          <a class="card card--teal" href="https://app.cardapioweb.com/brave_hero" target="_blank" rel="noopener">
+            <div class="card__img card__img--ilustra halftone" role="img" aria-label="Ilustração de uma tulipa de chope gelado">
+              <svg viewBox="0 0 200 200" aria-hidden="true">
+                <g stroke="#1C1512" stroke-linejoin="round" stroke-linecap="round">
+                  <ellipse cx="100" cy="166" rx="34" ry="8" fill="#FBEFC7" stroke-width="4"/>
+                  <rect x="92" y="138" width="16" height="26" fill="#FBEFC7" stroke-width="4"/>
+                  <path d="M60 50 C58 90 70 118 86 140 L114 140 C130 118 142 90 140 50 Z" fill="#F4A62A" stroke-width="5"/>
+                  <path d="M70 66 C70 88 76 106 86 122" fill="none" stroke="#FFFFFF" stroke-opacity=".6" stroke-width="5"/>
+                  <g fill="#FFFFFF" fill-opacity=".75" stroke="none">
+                    <circle cx="84" cy="92" r="3"/><circle cx="100" cy="112" r="2.5"/><circle cx="114" cy="84" r="3.5"/>
+                    <circle cx="94" cy="126" r="2"/><circle cx="121" cy="106" r="2"/>
+                  </g>
+                  <path d="M54 54 C50 36 66 28 78 34 C84 20 106 18 114 30 C124 22 146 30 146 48 C148 58 56 62 54 54 Z" fill="#FFFBF0" stroke-width="5"/>
+                  <path d="M132 55 C134 63 138 67 136 73 C133 78 127 73 129 65 Z" fill="#FFFBF0" stroke-width="3"/>
+                  <path d="M38 70 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4 Z" fill="#FFFFFF" stroke-width="2.5"/>
+                  <path d="M162 100 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3 Z" fill="#FFFFFF" stroke-width="2.5"/>
+                </g>
+              </svg>
+            </div>
+            <div class="card__body">
+              <span class="card__tag">03</span>
+              <h3>Chope gelado</h3>
+              <p>Tulipa trincando pra acompanhar o burger. Missão cumprida.</p>
+              <span class="card__cta">Ver no cardápio →</span>
+            </div>
+          </a>
+          <a class="card card--yellow" href="https://app.cardapioweb.com/brave_hero" target="_blank" rel="noopener">
+            <img class="card__img" src="assets/cardapio/acai.jpg" alt="Copo de açaí" width="700" height="700" loading="lazy">
+            <div class="card__body">
+              <span class="card__tag">04</span>
+              <h3>Sobremesas</h3>
+              <p>Açaí de 300 ou 500 ml pra fechar a missão com chave de ouro.</p>
+              <span class="card__cta">Ver no cardápio →</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Oferta com herói segurando a placa -->
+        <div class="oferta halftone">
+          <div class="oferta__poster" aria-hidden="true">
+            <div class="placa">
+              <span class="placa__title">Oferta!</span>
+              <strong>10% OFF</strong>
+              <small>no 1º pedido</small>
+            </div>
+            <svg class="heroi heroi--vermelho heroi--placa" viewBox="0 0 200 250"><use href="#heroi-bracos" width="200" height="250"/></svg>
+          </div>
+          <div class="oferta__text">
+            <p class="eyebrow eyebrow--red">Oferta de herói</p>
+            <h3 class="display display--sm">Cupom BRAVE10</h3>
+            <p>10% de desconto no seu primeiro pedido pelo nosso cardápio online. Lá você vê o cardápio completo, com preços e combos.</p>
+            <a class="btn btn--red" href="https://app.cardapioweb.com/brave_hero" target="_blank" rel="noopener">Ver cardápio completo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ESPAÇO KIDS ===== -->
+    <section class="section section--qg-herois" id="espaco">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow eyebrow--yellow">Não é só sobre hambúrguer</p>
+          <h2 class="display display--md">A base secreta dos pequenos heróis</h2>
+          <p>
+            Enquanto você curte aquele burger caprichado, a criançada tem um espaço só pra ela
+            se divertir. Salão temático, clima de família e lugar de sobra pra juntar a galera.
+          </p>
+          <ul class="checks">
+            <li>Espaço kids exclusivo</li>
+            <li>Salão temático pra fotos</li>
+            <li>Mesas pra grupos grandes</li>
+          </ul>
+        </div>
+
+        <!-- FOTO: salvar em assets/fotos/espaco-kids.jpg (sem o arquivo, aparece o quadrinho) -->
+        <figure class="panel media media--paisagem" data-media>
+          <div class="media__fallback halftone">
+            <div class="comic">
+              <span class="comic__bubble">Pai, mais 5 minutos no brinquedo!</span>
+              <span class="comic__pow">POW!</span>
+            </div>
+          </div>
+          <img class="media__img" src="assets/fotos/espaco-kids.jpg" alt="Espaço kids da Brave Hero" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== FESTAS ===== -->
+    <section class="section section--festa" id="festas">
+      <div class="wrap split split--reverse">
+        <div class="festa-media">
+          <!-- FOTO: salvar em assets/fotos/festa-aniversario.jpg (sem o arquivo, aparece o quadrinho) -->
+          <figure class="panel media" data-media>
+            <div class="media__fallback media__fallback--festa">
+              <div class="comic">
+                <span class="comic__bubble">Hoje o herói é você!</span>
+                <span class="comic__pow comic__pow--festa">Parabéns!</span>
+              </div>
+            </div>
+            <img class="media__img" src="assets/fotos/festa-aniversario.jpg" alt="Festa de aniversário na Brave Hero" loading="lazy">
+          </figure>
+          <div class="party__badge" aria-hidden="true">
+            <span>+10</span>
+            <small>pessoas</small>
+          </div>
+        </div>
+
+        <div>
+          <p class="eyebrow eyebrow--red">Festas e aniversários</p>
+          <h2 class="display display--md">Aniversário de herói</h2>
+          <p>
+            Quer comemorar ou reunir os amigos? Reserve sua mesa pra mais de 10 pessoas e
+            o aniversariante ganha <strong>um combo por conta da casa</strong>. A gente cuida do resto.
+          </p>
+          <a class="btn btn--red" href="https://wa.me/5521980740586?text=Ol%C3%A1!%20Quero%20reservar%20uma%20festa%20de%20anivers%C3%A1rio%20na%20Brave%20Hero." target="_blank" rel="noopener">Reservar pelo WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== POR DENTRO DO QG (galeria do local) ===== -->
+    <section class="section section--caverna" id="qg">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow eyebrow--yellow">Conheça o lugar</p>
+          <h2 class="display display--md">Por dentro do QG</h2>
+          <p>Pra você chegar já sabendo onde é e como é lá dentro.</p>
+        </header>
+
+        <!-- fotos em assets/local/ (recortes de posts da Brave Hero — trocar pelos originais) -->
+        <div class="qg__grid">
+          <figure class="qg__item qg__item--alto">
+            <img src="assets/local/salao.jpg" alt="Salão da Brave Hero com o letreiro na parede, luz neon e mesas" loading="lazy">
+            <figcaption>Salão principal</figcaption>
+          </figure>
+          <figure class="qg__item">
+            <img src="assets/local/mesas.jpg" alt="Mesa com hambúrguer, porções e chope" loading="lazy">
+            <figcaption>Mesas pra galera</figcaption>
+          </figure>
+          <figure class="qg__item">
+            <img src="assets/local/parede-hq.jpg" alt="Parede decorada com quadrinhos e o logo Brave Hero" loading="lazy">
+            <figcaption>Parede de quadrinhos</figcaption>
+          </figure>
+          <figure class="qg__item">
+            <img src="assets/local/decoracao.jpg" alt="Luminária e decoração temática de heróis" loading="lazy">
+            <figcaption>Decoração de heróis</figcaption>
+          </figure>
+          <figure class="qg__item">
+            <img src="assets/local/espaco-kids.jpg" alt="Brinquedão colorido do espaço kids" loading="lazy">
+            <figcaption>Espaço kids</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AVALIAÇÕES DO GOOGLE ===== -->
+    <section class="section section--yellow halftone" id="avaliacoes">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">Avaliações do Google</p>
+          <h2 class="display display--md">A voz do povo da Ilha</h2>
+          <!-- Nota e total do Google Maps, conferidos em 10/09/2026 — atualizar de tempos em tempos -->
+          <p class="rating">
+            <span class="rating__stars" aria-hidden="true">★★★★★</span>
+            <strong>4,9</strong>
+            <span>no Google · 169 avaliações</span>
+          </p>
+        </header>
+
+        <!-- Avaliações reais do Google Maps (5 estrelas), copiadas em 10/09/2026 -->
+        <div class="reviews" role="region" aria-label="Avaliações de clientes" tabindex="0">
+          <article class="review">
+            <div class="review__stars" aria-label="5 estrelas">★★★★★</div>
+            <blockquote>“Excelente! O ambiente é super aconchegante, os funcionários são atenciosos, possui espaço kids e amei a qualidade e sabor dos hambúrgueres. Estão de parabéns!”</blockquote>
+            <footer class="review__author">
+              <span class="avatar">J</span>
+              <div><strong>Jamyne F.</strong><small>Avaliação no Google</small></div>
+            </footer>
+          </article>
+          <article class="review">
+            <div class="review__stars" aria-label="5 estrelas">★★★★★</div>
+            <blockquote>“Fiz o aniversário de 1 ano do meu filho na Brave e o atendimento é excelente, a Laís e o José são super atenciosos! O local ficou muito aconchegante para os convidados, tudo perfeito! Hambúrguer de qualidade eu recomendo!”</blockquote>
+            <footer class="review__author">
+              <span class="avatar avatar--red">G</span>
+              <div><strong>Giulia R.</strong><small>Avaliação no Google</small></div>
+            </footer>
+          </article>
+          <article class="review">
+            <div class="review__stars" aria-label="5 estrelas">★★★★★</div>
+            <blockquote>“Comemorei o aniversário de 1 aninho do meu filho e amei, foram super atenciosos, meu convidados amaram a comida e o local (…)”</blockquote>
+            <footer class="review__author">
+              <span class="avatar avatar--green">R</span>
+              <div><strong>Rayssa S.</strong><small>Avaliação no Google</small></div>
+            </footer>
+          </article>
+        </div>
+
+        <div class="reviews__ctas">
+          <!-- Links diretos do Google pelo Place ID da Brave Hero Hamburgueria (ChIJd9bsDwZ3mQARd7zhd0NX5y4) -->
+          <a class="btn btn--light" href="https://search.google.com/local/reviews?placeid=ChIJd9bsDwZ3mQARd7zhd0NX5y4" target="_blank" rel="noopener">Ver todas no Google</a>
+          <a class="btn btn--red" href="https://search.google.com/local/writereview?placeid=ChIJd9bsDwZ3mQARd7zhd0NX5y4" target="_blank" rel="noopener">Deixar minha avaliação</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DELIVERY ===== -->
+    <section class="section section--ink halftone-light" id="delivery">
+      <div class="wrap delivery-wrap">
+        <header class="section__head">
+          <p class="eyebrow eyebrow--yellow">Delivery</p>
+          <h2 class="display display--md">Chame reforços</h2>
+          <p>Não dá pra vir? O herói vai até você.</p>
+        </header>
+
+        <svg class="heroi heroi--azul heroi--voando" viewBox="-72 20 320 210" aria-hidden="true"><use href="#heroi-voando" x="-72" y="20" width="320" height="210"/></svg>
+
+        <div class="delivery">
+          <a class="dcard dcard--featured" href="https://app.cardapioweb.com/brave_hero" target="_blank" rel="noopener">
+            <img class="dcard__logo dcard__logo--round" src="assets/logo.jpg" alt="" width="56" height="56" loading="lazy">
+            <span class="dcard__text">
+              <span class="dcard__label">Cardápio próprio</span>
+              <strong>Peça direto com a gente</strong>
+              <span class="dcard__note">Cupom <b>BRAVE10</b> · 10% off no primeiro pedido</span>
+            </span>
+          </a>
+          <a class="dcard" href="https://www.ifood.com.br/delivery/rio-de-janeiro-rj/brave-hero-hamburgueria-cocota/de892dff-67f0-44fe-a7d4-150a45293ad8" target="_blank" rel="noopener">
+            <img class="dcard__logo" src="assets/logos/ifood.jpg" alt="" width="56" height="56" loading="lazy">
+            <span class="dcard__text">
+              <span class="dcard__label">iFood</span>
+              <strong>Peça pelo iFood</strong>
+            </span>
+          </a>
+          <a class="dcard" href="https://oia.99app.com/dlp9/MTr39p" target="_blank" rel="noopener">
+            <img class="dcard__logo" src="assets/logos/99food.jpg" alt="" width="56" height="56" loading="lazy">
+            <span class="dcard__text">
+              <span class="dcard__label">99Food</span>
+              <strong>Peça pela 99Food</strong>
+            </span>
+          </a>
+          <a class="dcard" href="https://wa.me/5521980740586?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener">
+            <span class="dcard__logo dcard__logo--wa" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.3.6 4.5 1.8 6.4L3 29l7-1.8c1.8 1 3.9 1.5 6 1.5 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1.1-1.7-1.6-3.6-1.6-5.6C5.3 10 10.1 5.3 16 5.3S26.7 10 26.7 15.8 21.9 26.4 16 26.4zm5.9-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+            </span>
+            <span class="dcard__text">
+              <span class="dcard__label">WhatsApp</span>
+              <strong class="dcard__phone">(21) 98074-0586</strong>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VISITE ===== -->
+    <section class="section" id="visite">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow eyebrow--red">Como chegar</p>
+          <h2 class="display display--md">O quartel-general</h2>
+          <dl class="info">
+            <div>
+              <dt>Endereço</dt>
+              <dd>Estrada da Cacuia, 1259<br>Cocotá, Ilha do Governador<br>Rio de Janeiro — RJ</dd>
+            </div>
+            <div>
+              <dt>Horário</dt>
+              <dd>Terça a domingo<br>17h às 23h</dd>
+            </div>
+            <div>
+              <dt>Reservas</dt>
+              <dd><a href="https://wa.me/5521980740586" target="_blank" rel="noopener">(21) 98074-0586</a></dd>
+            </div>
+          </dl>
+          <a class="btn btn--light" href="https://www.google.com/maps/search/?api=1&query=Brave+Hero+Hamburgueria&query_place_id=ChIJd9bsDwZ3mQARd7zhd0NX5y4" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        </div>
+        <div class="panel map">
+          <iframe
+            title="Mapa: Brave Hero Burguer, Estrada da Cacuia 1259"
+            src="https://www.google.com/maps?q=Estrada+da+Cacuia,+1259+-+Cocot%C3%A1,+Rio+de+Janeiro+-+RJ&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <a href="#topo" class="brand brand--light">
+        <img src="assets/logo.jpg" alt="" width="40" height="40" loading="lazy">
+        <span>Brave Hero Burguer</span>
+      </a>
+      <p>Hamburgueria artesanal e espaço temático · Ilha do Governador</p>
+      <nav class="footer__links" aria-label="Redes">
+        <a href="https://www.instagram.com/braveheroburguer/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/5521980740586" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://app.cardapioweb.com/brave_hero" target="_blank" rel="noopener">Cardápio</a>
+      </nav>
+      <p class="footer__copy">© <span id="ano">2026</span> Brave Hero Burguer</p>
+    </div>
+  </footer>
+
+  <!-- Janela pra ampliar as fotos da galeria "Por dentro do QG" -->
+  <dialog class="lightbox" aria-label="Foto ampliada">
+    <button class="lightbox__close" type="button" aria-label="Fechar">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Foto anterior">‹</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" alt="">
+      <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Próxima foto">›</button>
+  </dialog>
+
+  <a class="wa-float" href="https://wa.me/5521980740586?text=Ol%C3%A1!%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.3.6 4.5 1.8 6.4L3 29l7-1.8c1.8 1 3.9 1.5 6 1.5 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1.1-1.7-1.6-3.6-1.6-5.6C5.3 10 10.1 5.3 16 5.3S26.7 10 26.7 15.8 21.9 26.4 16 26.4zm5.9-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

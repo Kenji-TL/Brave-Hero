@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Roteiro de WhatsApp | Brave Hero Burguer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 14mm 14mm 14mm; }
+    :root {
+      --yellow: #F6C23B;
+      --red: #DB4E3C;
+      --ink: #1C1512;
+      --paper: #FFF8E9;
+      --wa-bg: #EFEAE2;
+      --wa-out: #D9FDD3;
+      --wa-in: #FFFFFF;
+      --wa-dark: #075E54;
+      --stroke: 2px solid var(--ink);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Rubik", "Segoe UI", Arial, sans-serif;
+      font-size: 11.5px;
+      line-height: 1.45;
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    @media screen { body { width: 210mm; margin: 0 auto; padding: 14mm; } }
+    p { margin: 0; }
+
+    .display { font-family: "Bangers", Impact, sans-serif; font-weight: 400; letter-spacing: .02em; text-transform: uppercase; line-height: 1; margin: 0; }
+    .halftone { background-image: radial-gradient(rgba(28, 21, 18, .14) 1.1px, transparent 1.3px); background-size: 11px 11px; }
+    mark { padding: 0 3px; font-weight: 700; background: #FFE58A; border-radius: 3px; }
+
+    /* ---------- capa ---------- */
+    .capa { padding: 16px 18px 16px; background-color: var(--yellow); border: var(--stroke); border-radius: 14px; box-shadow: 4px 4px 0 var(--ink); }
+    .capa__topo { display: flex; align-items: center; gap: 10px; }
+    .capa__topo img { width: 38px; height: 38px; border-radius: 50%; border: var(--stroke); }
+    .capa__topo span { font-family: "Bangers", Impact, sans-serif; font-size: 18px; letter-spacing: .04em; }
+    .capa h1 { font-size: 46px; margin-top: 12px; }
+    .capa h1 span { color: var(--red); -webkit-text-stroke: 1.2px var(--ink); paint-order: stroke fill; text-shadow: 2px 2px 0 var(--ink); }
+    .capa__lead { margin-top: 6px; font-size: 13px; font-weight: 500; }
+    .regra { margin-top: 12px; padding: 8px 12px; font-weight: 700; color: var(--white, #fff); background: var(--ink); border-radius: 9px; }
+    .regra b { color: var(--yellow); }
+
+    .legenda { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 12px 0 0; font-size: 10.5px; font-weight: 700; }
+    .legenda span { display: inline-flex; align-items: center; gap: 6px; }
+    .legenda i { display: inline-block; width: 22px; height: 13px; border-radius: 5px; border: 1px solid rgba(0,0,0,.2); }
+
+    .mapa { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin: 12px 0 0; padding: 0; list-style: none; font-size: 10.5px; font-weight: 800; }
+    .mapa li { padding: 4px 9px; background: #fff; border: 1.5px solid var(--ink); border-radius: 999px; }
+
+    /* ---------- blocos ---------- */
+    h2.secao { display: flex; align-items: center; gap: 9px; margin: 20px 0 3px; font-size: 26px; break-after: avoid; }
+    h2.secao .n {
+      display: grid; place-items: center; flex: none;
+      width: 30px; height: 30px; font-size: 18px; color: #fff;
+      background: var(--red); border: 2px solid var(--ink); border-radius: 50%;
+    }
+    .objetivo { margin: 0 0 8px; font-size: 11px; font-weight: 500; opacity: .75; break-after: avoid; }
+    .objetivo b { opacity: 1; }
+
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+    .card { padding: 11px 13px; background: #fff; border: var(--stroke); border-radius: 11px; box-shadow: 3px 3px 0 var(--ink); break-inside: avoid; }
+    .card h3 { font-family: "Bangers", Impact, sans-serif; font-weight: 400; font-size: 18px; letter-spacing: .03em; margin: 0 0 5px; line-height: 1; }
+    .card ul { margin: 0; padding-left: 16px; }
+    .card li { margin-bottom: 3px; }
+    .card p + p { margin-top: 5px; }
+
+    .ganchos { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9px; }
+    .gancho { padding: 10px 11px; }
+    .gancho h3 { font-size: 16px; }
+    .gancho p { font-size: 10.8px; }
+    .google { margin-top: 7px; padding: 7px 8px; font-size: 9.5px; background: #F8F9FA; border: 1px solid #DADCE0; border-radius: 7px; }
+    .google b { display: block; font-size: 10.5px; }
+    .google .estrela { color: #E09A00; }
+    .google .acoes { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+    .google .acoes span { padding: 1px 7px; border: 1px solid #9BA3AF; border-radius: 999px; }
+    .google .acoes .falta { color: var(--red); border: 1.5px dashed var(--red); font-weight: 700; }
+
+    /* ---------- chat ---------- */
+    .chat {
+      display: flex; flex-direction: column; gap: 5px;
+      padding: 12px 12px 12px;
+      background: var(--wa-bg);
+      border: 1.5px solid #D8D0C4;
+      border-radius: 12px;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+    .quem { font-size: 9.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; opacity: .55; margin-top: 4px; }
+    .quem.out { align-self: flex-end; color: var(--wa-dark); opacity: .8; }
+    .quem.in { align-self: flex-start; }
+    .msg {
+      max-width: 80%;
+      padding: 6px 9px 4px;
+      font-size: 11.5px;
+      border-radius: 9px;
+      box-shadow: 0 1px .5px rgba(0,0,0,.14);
+      break-inside: avoid;
+    }
+    .msg.out { align-self: flex-end; background: var(--wa-out); border-top-right-radius: 2px; }
+    .msg.in { align-self: flex-start; background: var(--wa-in); border-top-left-radius: 2px; }
+    .msg.out::after { content: "✓✓"; display: block; margin-top: 1px; text-align: right; font-size: 8.5px; letter-spacing: -1px; line-height: 1; color: #53BDEB; }
+    .msg.in::after { content: ""; display: block; height: 3px; }
+    .msg ol, .msg ul { margin: 2px 0 0; padding-left: 16px; }
+    .msg li { margin-bottom: 1px; }
+
+    .msg.foto { padding: 4px 4px 4px; }
+    .msg.foto img { display: block; width: 36mm; border-radius: 7px; }
+    .msg.foto p { padding: 4px 5px 0; }
+
+    .msg.doc { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+    .msg.doc .pdf { display: grid; place-items: center; width: 30px; height: 36px; font-size: 9px; font-weight: 800; color: #fff; background: #E2412F; border-radius: 4px; }
+    .msg.doc b { display: block; font-size: 11px; }
+    .msg.doc small { font-size: 9.5px; opacity: .6; }
+    .msg.doc::after { flex-basis: 100%; }
+
+    .chip {
+      align-self: center;
+      margin: 5px 0 2px;
+      padding: 3px 10px;
+      font-size: 9.5px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
+      color: #54656F; background: #fff;
+      border-radius: 7px;
+      box-shadow: 0 1px .5px rgba(0,0,0,.12);
+      break-after: avoid;
+    }
+    .ramo {
+      align-self: stretch;
+      margin: 8px 0 1px;
+      padding: 4px 10px;
+      font-size: 10px; font-weight: 800;
+      color: var(--yellow); background: var(--ink);
+      border-radius: 7px;
+      break-after: avoid;
+    }
+    .dica {
+      align-self: stretch;
+      margin: 3px 0;
+      padding: 7px 10px;
+      font-size: 10.5px;
+      background: #FFF3C4;
+      border: 1.5px dashed #C99A14;
+      border-radius: 8px;
+      break-inside: avoid;
+    }
+    .dica::before { content: "DICA PRA VOCÊ  "; font-weight: 800; font-size: 9.5px; letter-spacing: .05em; color: #9A6B00; }
+
+    /* ---------- objeções ---------- */
+    .objecoes { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+    .objecao { break-inside: avoid; }
+    .objecao .chat { height: 100%; padding: 9px; }
+    .objecao .msg { max-width: 92%; font-size: 11px; }
+
+    .rodape { margin-top: 18px; padding-top: 8px; font-size: 10px; font-weight: 700; opacity: .6; border-top: 1.5px solid rgba(28,21,18,.3); display: flex; justify-content: space-between; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== CAPA ===== -->
+  <section class="capa halftone">
+    <div class="capa__topo"><img src="../site/assets/logo.jpg" alt=""><span>Brave Hero Burguer</span></div>
+    <h1 class="display">Roteiro de WhatsApp <span>do oi até o sim</span></h1>
+    <p class="capa__lead">A conversa inteira montada como se você já estivesse no chat com eles: o que mandar, o que eles podem responder e o que você responde de volta.</p>
+    <p class="regra"><b>Regra de ouro:</b> não fale de preço antes de eles verem o site e mostrarem interesse.</p>
+  </section>
+
+  <div class="legenda">
+    <span><i style="background: var(--wa-out)"></i> Você manda (copie e cole)</span>
+    <span><i style="background: #fff"></i> Eles podem responder assim</span>
+    <span><i style="background: #FFF3C4; border-style: dashed"></i> Dica só pra você</span>
+    <span><mark>[entre colchetes]</mark> você completa</span>
+  </div>
+
+  <ol class="mapa">
+    <li>1 Abertura</li>
+    <li>2 Prévia do site</li>
+    <li>3 Perguntas</li>
+    <li>4 Proposta</li>
+    <li>5 Fechamento</li>
+    <li>Objeções</li>
+    <li>Se não responderem</li>
+    <li>Depois do sim</li>
+  </ol>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Antes de mandar o primeiro oi</h3>
+      <ul>
+        <li><b>Link da prévia:</b> peça pro Claude “publica uma prévia da Brave Hero por 2 dias”. É um endereço de teste que não aparece no Google.</li>
+        <li><b>Print do site no celular:</b> <i>proposta/img/site-celular.jpg</i></li>
+        <li><b>PDF da proposta:</b> <i>Proposta-Brave-Hero-Site.pdf</i> (só vai depois do interesse)</li>
+        <li><b>Horário:</b> terça a quinta, das 14h às 16h30, antes de abrir às 17h. Evite sexta e fim de semana à noite.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Com quem e o que usar</h3>
+      <ul>
+        <li><b>WhatsApp (21) 98074-0586</b> é o de reservas: quem responde costuma ser da equipe. Se não responder, mande a mesma abertura no direct <b>@braveheroburguer</b>.</li>
+        <li><b>Dados reais</b> (não invente outros): nota 4,9 com 169 avaliações · perfil do Google com “Adicionar website” · cupom BRAVE10 sem comissão · festas de 10 a 60 pessoas · espaço kids.</li>
+        <li><b>Jeito de escrever:</b> mensagens curtas, uma pergunta por vez, sem áudio e sem textão. Responda rápido.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== GANCHOS ===== -->
+  <h2 class="secao display"><span class="n">★</span>O que chama atenção</h2>
+  <p class="objetivo">Os ganchos que fazem o dono parar pra ler. Eles já estão espalhados pela conversa abaixo.</p>
+  <div class="ganchos">
+    <div class="card gancho">
+      <h3>Elogio com número real</h3>
+      <p>“Nota 4,9 com mais de 160 avaliações” abre a conversa bem. Todo dono gosta de ver o trabalho reconhecido, e mostra que você pesquisou a casa.</p>
+    </div>
+    <div class="card gancho">
+      <h3>Print do site no celular</h3>
+      <p>Imagem chama mais atenção que link. Muita gente só abre o link depois de ver o print. Mande os dois juntos.</p>
+    </div>
+    <div class="card gancho">
+      <h3>O Google sem site</h3>
+      <p>Tire um print do perfil deles no Google. Eles veem o problema com os próprios olhos:</p>
+      <div class="google">
+        <b>Brave Hero Hamburgueria</b>
+        <span class="estrela">★★★★★</span> 4,9 (169) · Cocotá
+        <div class="acoes"><span>Rotas</span><span>Ligar</span><span class="falta">Adicionar website</span></div>
+      </div>
+    </div>
+    <div class="card gancho">
+      <h3>Dinheiro que fica em casa</h3>
+      <p>Fale de comissão, não de “presença digital”. Pedido pelo cardápio próprio com o BRAVE10 não paga comissão de aplicativo.</p>
+    </div>
+    <div class="card gancho">
+      <h3>Dia das Crianças (12/10)</h3>
+      <p>Espaço kids e festas de aniversário: é um bom motivo pra ter o site no ar antes da data. Use no retorno e no fechamento, sem pressionar.</p>
+    </div>
+    <div class="card gancho">
+      <h3>Feito pra eles</h3>
+      <p>O site tem os mascotes, o tema de heróis e as fotos da casa. Diga “montei pra vocês”: não é modelo pronto.</p>
+    </div>
+  </div>
+
+  <!-- ===== 1. ABERTURA ===== -->
+  <h2 class="secao display"><span class="n">1</span>Abertura</h2>
+  <p class="objetivo"><b>Objetivo:</b> despertar curiosidade e descobrir quem decide. Mande em 3 mensagens separadas, não num bloco só.</p>
+  <div class="chat">
+    <div class="quem out">Você</div>
+    <div class="msg out">Oi, tudo bem? Aqui é o Gustavo Kenji, eu crio sites pra negócios locais.</div>
+    <div class="msg out">Vi que a Brave Hero tem nota 4,9 no Google, com mais de 160 avaliações. Parabéns, isso é raro!</div>
+    <div class="msg out">Reparei que no Google o perfil de vocês ainda aparece sem site, então montei uma prévia de como ficaria o site da Brave Hero. Com quem eu falo sobre isso aí?</div>
+    <div class="dica">Se quiser reforçar, mande junto o print do perfil no Google mostrando “Adicionar website”.</div>
+
+    <div class="ramo">Se for alguém da equipe</div>
+    <div class="quem in">Eles</div>
+    <div class="msg in">Oi! Isso é com o dono, vou passar pra ele.</div>
+    <div class="quem out">Você</div>
+    <div class="msg out">Perfeito, obrigado! Pode pedir pra ele me chamar aqui, ou me passar o contato dele? Eu mostro rapidinho.</div>
+
+    <div class="ramo">Se for o dono: pule direto pra etapa 2</div>
+    <div class="quem in">Eles</div>
+    <div class="msg in">Oi, sou eu mesmo. Pode falar.</div>
+
+    <div class="ramo">Se disserem que não têm interesse</div>
+    <div class="quem in">Eles</div>
+    <div class="msg in">Obrigado, mas no momento não temos interesse.</div>
+    <div class="quem out">Você</div>
+    <div class="msg out">Tranquilo, obrigado pela atenção! Se mudarem de ideia, a prévia tá pronta, é só me chamar.</div>
+  </div>
+
+  <!-- ===== 2. PRÉVIA ===== -->
+  <h2 class="secao display"><span class="n">2</span>Mostrar a prévia do site</h2>
+  <p class="objetivo"><b>Objetivo:</b> fazer o dono abrir o site no celular e navegar sozinho. Esse é o gancho principal.</p>
+  <div class="chat">
+    <div class="quem out">Você</div>
+    <div class="msg out">Montei no tema de heróis, com o cardápio, o espaço kids, as festas e as avaliações de vocês. Dá uma olhada no celular:</div>
+    <div class="msg out foto"><img src="img/site-celular.jpg" alt="Print do site no celular"><p>Assim fica no celular</p></div>
+    <div class="msg out"><mark>[link da prévia]</mark></div>
+    <div class="msg out">Três coisas que eu acho que vão te interessar:
+      <ol>
+        <li>O cliente pede direto pelo cardápio de vocês com o cupom BRAVE10, sem comissão de aplicativo</li>
+        <li>Tem uma parte só pras festas de aniversário, com botão de reserva no WhatsApp</li>
+        <li>As avaliações do Google aparecem no site, e o perfil de vocês no Google deixa de ficar sem site</li>
+      </ol>
+    </div>
+    <div class="msg out">Me diz o que achou!</div>
+    <div class="dica">Depois disso, espere. Não mande mais nada até eles responderem. Se não responderem, vá pra parte “Se não responderem”.</div>
+  </div>
+
+  <!-- ===== 3. PERGUNTAS ===== -->
+  <h2 class="secao display"><span class="n">3</span>Entender o negócio</h2>
+  <p class="objetivo"><b>Objetivo:</b> achar o problema que o site resolve pra eles. Uma pergunta de cada vez, esperando a resposta.</p>
+  <div class="chat">
+    <div class="quem in">Eles</div>
+    <div class="msg in">Caramba, ficou muito maneiro!</div>
+    <div class="quem out">Você</div>
+    <div class="msg out">Que bom que gostou! Posso te fazer uma pergunta rápida?</div>
+    <div class="quem in">Eles</div>
+    <div class="msg in">Pode sim</div>
+    <div class="quem out">Você</div>
+    <div class="msg out">Hoje, a maior parte dos pedidos vem pelo iFood e pela 99, ou pelo cardápio de vocês?</div>
+    <div class="quem in">Eles</div>
+    <div class="msg in">Mais pelo iFood</div>
+    <div class="quem out">Você</div>
+    <div class="msg out">E as festas de aniversário, como o pessoal costuma ficar sabendo delas hoje?</div>
+    <div class="quem in">Eles</div>
+    <div class="msg in">Mais pelo Instagram e por indicação</div>
+    <div class="dica">Guarde as respostas: você vai usar as palavras deles na próxima mensagem (“você falou que muita coisa vem do iFood, então…”).</div>
+  </div>
+
+  <!-- ===== 4. PROPOSTA ===== -->
+  <h2 class="secao display"><span class="n">4</span>Mandar a proposta</h2>
+  <p class="objetivo"><b>Objetivo:</b> ligar o site ao que eles responderam e só depois falar de valores.</p>
+  <div class="chat">
+    <div class="quem out">Você</div>
+    <div class="msg out">Faz sentido. Você falou que muita coisa vem do iFood: o site ajuda justamente nisso. Quem pesquisa no Google ou clica no link do Instagram cai direto no cardápio de vocês, e o pedido com o BRAVE10 não paga comissão.</div>
+    <div class="dica">Se a resposta foi sobre festas, troque por: “Com o site, os pais veem o espaço kids e as fotos das festas e já chamam no WhatsApp pra reservar.”</div>
+    <div class="msg out">Te mando a proposta com tudo detalhado. Resumindo os valores:
+      <ul>
+        <li><b>Site completo:</b> R$ 1.500 à vista ou R$ 2.000 no cartão, com 2 rodadas de ajustes grátis</li>
+        <li><b>Manutenção:</b> R$ 150 por mês (eu atualizo cardápio, fotos e promoções pra vocês)</li>
+        <li><b>Hospedagem + domínio com a marca:</b> plano Premium da Hostinger, contratado direto por vocês. Hoje sai R$ 10,99/mês no plano de 48 meses, com o domínio grátis no primeiro ano. Eu configuro tudo.</li>
+      </ul>
+    </div>
+    <div class="msg out doc"><span class="pdf">PDF</span><span><b>Proposta-Brave-Hero-Site.pdf</b><small>6 páginas · PDF</small></span></div>
+    <div class="msg out">Uma festa de 10 pessoas, ou alguns pedidos no mês feitos direto sem comissão, já pagam o site.</div>
+  </div>
+
+  <!-- ===== 5. FECHAMENTO ===== -->
+  <h2 class="secao display"><span class="n">5</span>Fechamento</h2>
+  <p class="objetivo"><b>Objetivo:</b> transformar o interesse em data de início.</p>
+  <div class="chat">
+    <div class="quem out">Você</div>
+    <div class="msg out">Com a entrada de 50%, eu coloco o site no ar em <mark>[X]</mark> dias, já com o endereço da Brave Hero. Podemos começar essa semana?</div>
+    <div class="dica">Se o prazo couber mesmo, dá pra acrescentar: “Assim o site já entra no ar antes do Dia das Crianças.” Não prometa data que você não consegue cumprir.</div>
+    <div class="quem in">Eles</div>
+    <div class="msg in">Bora! Como a gente faz?</div>
+    <div class="quem out">Você</div>
+    <div class="msg out">Show! Te mando os dados do Pix pra entrada. Os outros 50% ficam pra quando o site estiver pronto.</div>
+    <div class="msg out">Pra eu começar, preciso de 4 coisinhas:
+      <ol>
+        <li>Fotos originais do salão, do espaço kids, das festas e dos burgers (pode mandar por aqui mesmo)</li>
+        <li>Confirmar o cardápio, o cupom BRAVE10, o horário e as regras das festas</li>
+        <li>Me adicionar como gerente no perfil da Brave Hero no Google, pra eu colocar o link do site</li>
+        <li>Contratar o plano Premium da Hostinger no CNPJ de vocês. Te mando o link e te ajudo no passo a passo</li>
+      </ol>
+    </div>
+    <div class="dica">Deixe por escrito o que está incluso (o PDF), o prazo e as 2 rodadas de ajustes grátis. Mudança fora disso é cobrada à parte. Pagamento: 50% de entrada e 50% na entrega, por Pix ou cartão.</div>
+  </div>
+
+  <!-- ===== OBJEÇÕES ===== -->
+  <h2 class="secao display"><span class="n">?</span>Respostas prontas pras objeções</h2>
+  <p class="objetivo">Se aparecer uma dessas, responda com calma e volte pra etapa em que você estava.</p>
+  <div class="objecoes">
+    <div class="objecao"><div class="chat">
+      <div class="msg in">Já tenho Instagram.</div>
+      <div class="msg out">O Instagram é ótimo pra quem já segue vocês. O site é pra quem ainda não conhece e pesquisa no Google, e hoje o perfil de vocês aparece com “Adicionar website”. Um não substitui o outro: o link do site vai até na bio do Instagram.</div>
+    </div></div>
+    <div class="objecao"><div class="chat">
+      <div class="msg in">Tá caro.</div>
+      <div class="msg out">Entendo. Pensa assim: uma festa de aniversário de 10 pessoas, ou alguns pedidos no mês feitos direto sem comissão de aplicativo, já pagam o site. E dá pra parcelar no cartão.</div>
+    </div></div>
+    <div class="objecao"><div class="chat">
+      <div class="msg in">Já estou no iFood.</div>
+      <div class="msg out">Ótimo, o site inclusive tem o botão do iFood. A diferença é que ele também leva pro cardápio próprio de vocês com o BRAVE10, onde não tem comissão.</div>
+    </div></div>
+    <div class="objecao"><div class="chat">
+      <div class="msg in">Não tenho tempo pra mexer em site.</div>
+      <div class="msg out">Você não precisa mexer em nada. Na manutenção de R$ 150, eu atualizo cardápio, fotos e promoções. Você só me manda por aqui.</div>
+    </div></div>
+    <div class="objecao"><div class="chat">
+      <div class="msg in">Por que eu que tenho que pagar a Hostinger?</div>
+      <div class="msg out">É onde o site fica guardado e de onde vem o endereço com a marca. Fica tudo no nome de vocês: o site e o domínio são da Brave Hero, não meus. Se um dia quiserem trocar de profissional, nada se perde. E sai uns R$ 11 por mês, com o domínio grátis no primeiro ano.</div>
+    </div></div>
+    <div class="objecao"><div class="chat">
+      <div class="msg in">E se eu quiser mudar alguma coisa depois?</div>
+      <div class="msg out">Antes da entrega vocês têm 2 rodadas de ajustes grátis, pra deixar do jeito que quiserem. Depois que o site estiver no ar, as atualizações de cardápio, fotos e promoções entram na manutenção. É só me mandar por aqui.</div>
+    </div></div>
+    <div class="objecao"><div class="chat">
+      <div class="msg in">Vou pensar.</div>
+      <div class="msg out">Claro, fica à vontade! O link da prévia fica no ar até <mark>[dia]</mark>, pra você olhar com calma e mostrar pra quem precisar. Posso te chamar na quinta pra saber o que achou?</div>
+    </div></div>
+    <div class="objecao"><div class="chat">
+      <div class="msg in">Um conhecido meu faz site.</div>
+      <div class="msg out">Pode ser uma boa! A diferença aqui é que o site já está pronto, com a identidade da Brave Hero, avaliações reais e ligado ao cardápio, iFood, 99 e WhatsApp. Dá pra colocar no ar essa semana.</div>
+    </div></div>
+    <div class="objecao"><div class="chat">
+      <div class="msg in">Manda mais informação.</div>
+      <div class="msg out">Claro! Te mando a proposta completa em PDF. Qualquer dúvida, é só me perguntar por aqui.</div>
+    </div></div>
+    <div class="objecao"><div class="chat">
+      <div class="msg in">Dá pra pagar tudo só no final?</div>
+      <div class="msg out">Eu trabalho com 50% de entrada e 50% na entrega. Assim eu já separo o tempo pra fazer o de vocês, e vocês só pagam o resto com o site pronto e aprovado.</div>
+    </div></div>
+  </div>
+
+  <!-- ===== SEM RESPOSTA ===== -->
+  <h2 class="secao display"><span class="n">⏱</span>Se não responderem</h2>
+  <p class="objetivo">No máximo 3 tentativas. Insistir mais que isso queima a relação.</p>
+  <div class="chat">
+    <div class="chip">2 dias depois</div>
+    <div class="msg out">Oi! Conseguiu dar uma olhada no site? Qualquer dúvida, tô por aqui.</div>
+    <div class="chip">7 dias depois</div>
+    <div class="msg out">Lembrei de vocês por causa do Dia das Crianças. O site tem uma parte só pro espaço kids e pras festas de aniversário, dá uma olhada: <mark>[link da prévia]</mark></div>
+    <div class="dica">A prévia fica no ar só por uns dias. Se ela já tiver saído, peça pro Claude publicar de novo antes de mandar o link.</div>
+    <div class="chip">14 dias depois (última)</div>
+    <div class="msg out">Vou parar de te chamar pra não incomodar. Se quiser o site no futuro, é só me chamar!</div>
+  </div>
+
+  <!-- ===== DEPOIS DO SIM ===== -->
+  <h2 class="secao display"><span class="n">✓</span>Depois do sim</h2>
+  <div class="grid2" style="margin-top: 6px;">
+    <div class="card">
+      <h3>O que fica combinado</h3>
+      <ul>
+        <li>50% de entrada e 50% na entrega, por Pix ou cartão</li>
+        <li>O que está incluso é o que está no PDF da proposta</li>
+        <li>2 rodadas de ajustes grátis antes da entrega. Mudança fora disso é cobrada à parte</li>
+        <li>A Hostinger é contratada e paga pela Brave Hero, no nome deles</li>
+        <li>Depois da entrega, as atualizações entram na manutenção de R$ 150/mês</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Cuidados</h3>
+      <ul>
+        <li>A prévia usa a marca e as fotos da Brave Hero: é só pra apresentação. Não divulgue como site oficial antes do “sim”.</li>
+        <li>Use só números reais (4,9, 169 avaliações). Não prometa quantidade de pedidos ou clientes.</li>
+        <li>Nada de preço antes de eles verem o site.</li>
+        <li>Nada de áudio: tudo por mensagem escrita.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rodape"><span>Roteiro de WhatsApp · Brave Hero Burguer</span><span>Uso interno · Gustavo Kenji Norimatsu</span></div>
+
+</body>
+</html>
